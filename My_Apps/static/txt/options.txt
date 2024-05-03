@@ -1,0 +1,7 @@
+If fire alarm signal present through smoke detector then the unit will be stopped and an alarm generated.
+
+
+The Condenser fans will be switched on upon compressors cut in. 
+The speed regulator will regulate the condenser speed to achieve the required head pressure.
+
+

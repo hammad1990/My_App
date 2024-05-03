@@ -1,0 +1,4 @@
+1-Supply air temperature sensor.
+2-Outside air temperature sensor.
+3-Room air temperature sensor (Provided as loose item to be installed at room by others).
+4-Defrost air sensors.

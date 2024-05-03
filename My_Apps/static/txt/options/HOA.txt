@@ -1,0 +1,5 @@
+The Unit is be equipped with 3-positions (Hand-Off-Auto) selector switch.User can select the required mode as below:
+1-Hand mode: the unit will start directly without waiting any remote switch signal from DDC/BMS.
+2-Off mode:the unit will stop.
+3-Auto mode:the unit will wait for remote switch signal(volt free) from DDC/BMS in order to be enabled.
+

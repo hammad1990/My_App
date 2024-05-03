@@ -1,0 +1,1 @@
+The filters will be monitored by pressure differential  indication transmitter (PDIT) . Client can monitor the differential  pressure value from the tranmitter display.In case the differential  pressure value beomes more than specific setpoint, then alarm relay will be triggered and give volt free contact (VFC) to DDC/BMS for monitoring purposes.

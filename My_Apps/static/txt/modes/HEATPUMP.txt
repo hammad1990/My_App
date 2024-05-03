@@ -1,0 +1,2 @@
+Heat pump mode will be enabled if heat/cool switch closed (provided by other).Then controller will start the supply fan motor
+ then start the compressors to  achieve the heating set point.

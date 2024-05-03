@@ -1,0 +1,2 @@
+The filter switch is installed across the filter media to detect the differentail pressure before and after the filter.If the differential value gets above specific setpoint then the switch will trigger and give indication (volt free contact)for client .
+

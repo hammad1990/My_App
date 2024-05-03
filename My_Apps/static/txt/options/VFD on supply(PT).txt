@@ -1,0 +1,2 @@
+The VFD will measure duct static pressure and will modulate the supply fan VFD speed to maintain a duct static pressure set point of 1-inch WC (adj.). The supply fan VFD Hz will not drop below 25Hz fixed at VFD.The supply fan controlled by the Duct Static Pressure Transducer (installed and supplied by Petra 0-2.5-inch WC) which is connected directly to theVFD.
+Note:Static pressure tubing provided by contractor to be located in ductwork where required.

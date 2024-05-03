@@ -1,0 +1,3 @@
+The two HVAC units will be connected to each other via MODBUS-RS485 in order to perform automatic changeover function.The two HVAC units need to be connected with 3c*1.5-mm2 (Sheilded type) cable.The changeover process will occur if any of the following conditions is satisfied:
+1-Alarm on working HVAC unit.
+2-Changeover time between HVAC (A) & (B) elpased.

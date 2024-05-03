@@ -1,0 +1,6 @@
+User can be able to start the system by one of the following:
+1-Manually from controller LCD.
+2-Remotly by digital input signal (hard wired: from BMS).
+3-Schedule function.
+4-Through BMS system(optional).
+5-Through extended keypad (optional).

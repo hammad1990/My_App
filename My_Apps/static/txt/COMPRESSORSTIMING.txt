@@ -1,0 +1,5 @@
+-Compressor start delay time after main fan start: the compressor can be switched on if the time has elapsed since the main fan started.
+-Minimum compressor off-time: makes sure that the compressor, once switched off, stays off for a time before being switched back on.
+-Minimum compressor on-time: this time makes sure that the compressor, once switched on, stays on for a time before being switched off again (if an alarm is activated, the compressor is switched off regardless, even if the above mentioned time has not elapsed).
+-Time between starts by a single compressor: this time makes sure, once a compressor is started, that time elapses before the same compressor can be started again (limits demand peaks per hour).
+-Time between starts by different compressors: this time makes sure that a time elapses before different compressors. 

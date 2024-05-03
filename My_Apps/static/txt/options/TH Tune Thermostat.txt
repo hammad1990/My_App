@@ -1,0 +1,5 @@
+The unit can be equipped with TH-Tune Thermostat to be installed at suitable place at site.Through this Thermostat , user can do the following:
+1-Start/Stop the unit.
+2-Change Unit setpoint.
+3-Check all sensors readings.
+The Thermostat can be extended with maximum  distance  500mtr using cable 4cx1.5mm2-Sheilded type.

@@ -1,0 +1,1 @@
+The unit setpoint can be adjusted through 0-10V/4-20mA analogue signal coming from DDC/BMS.

@@ -1,0 +1,1 @@
+The exhaust/return fan will be enabled prior to supply fan starting.If exhaust/return fan motor tripped for any reason then unit will stop and generate alarm on controller LCD.

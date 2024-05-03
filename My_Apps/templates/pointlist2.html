@@ -1,0 +1,245 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+
+<div class="container">
+  <div style="position:fixed; left:1750px; top:28px;margin-top:18px">
+    <h5 style="color: red;">welcome {{username}}</h5>
+  </div>
+  <div class="row">
+    <div class="col-lg-12  col-xs-12 ">
+
+      <h1 class="text" style="margin-top: 50px">USA pointlist generator</h1>
+
+  </div>
+  <form action="/pointlist2" method="POST" enctype="multipart/form-data">
+<!--post means to post to server-->
+    <div class="row">
+      <div class="col-lg-12  col-xs-12 ">
+        <div class="row">
+          <div class="col-lg-4" >
+
+            <p>Select The Unit</p>
+            <select class="form-select" id="UModelPL" style="display: block ; width:95px;height:40px" name="UModel"
+            onchange="getselectedunit()" required>
+              <option value="">None</option>
+              <option value="PPH">PPH</option>
+              <option value="WPPH">WPPH</option>
+            </select>
+
+            <p class="text6">Select the Options</p>
+<!-- #################################### -->
+            <div style="display: block;margin-bottom:3px"><label class="text7 ">
+
+              <input type="number" id="COMPQTY" placeholder="No. of comp" min="1" name="COMPQTY">
+            </div>
+            <h5 style="background-color: yellow;width:250px">temp & humdity sensor</h5>
+            <div style="display: block;"><label class="text7 ">
+              <input type="checkbox" id="DX1" value="DX AIR TEMP" class="checkbox " name="fn1"
+                  onclick="myFunction()">DX SENSORS</label>
+              <input type="number" id="DX2" placeholder="qty" min="1" max="4" name="DXQTY">
+            </div>
+            <div style="display: block;" id="DHWCTS"><label class="text7 ">
+                <input type="checkbox" id="HWCTS1" value="HWCTS Sensor" class="checkbox " name="fn1"
+                    onclick="myFunction()">HWCTS Sensor</label>
+                <input type="number" id="HWCTS2" placeholder="qty" min="1" max="4" name="HWCTSQTY">
+            </div>
+            <div style="display: block;" id="CCWCTS"><label class="text7 ">
+              <input type="checkbox" id="CWCTS1" value="CWCTS Sensor" class="checkbox " name="fn1"
+                  onclick="myFunction()">CWCTS Sensor</label>
+              <input type="number" id="CWCTS2" placeholder="qty" min="1" max="6" name="CWCTSQTY">
+          </div>
+            <div style="display: block;"><label class="text7 ">
+                <input type="checkbox" id="Outside Air Humidity" value="Outside Air Humidity" class="checkbox "
+                    name="fn1">OA Humd.sensor</label>
+            </div>
+            <div style="display: block;"><label class="text7 ">
+                <input type="checkbox" id="sa_humidity_r" value="sa_humidity_r" class="checkbox " name="fn1">SA
+                Humd.sensor</label>
+            </div>
+            <div style="display: block;"><label class="text7 ">
+                <input type="checkbox" id="ra_humidity_r" value="ra_humidity_r" class="checkbox " name="fn1">RA
+                Humd.sensor</label>
+            </div>
+            <div style="display: block;"><label class="text7 ">
+                <input type="checkbox" id="Ea_humidity_r" value="Ea_humidity_r" class="checkbox " name="fn1">EA
+                Humd.sensor</label>
+            </div>
+            <div style="display: block;"><label class="text7 ">
+                <input type="checkbox" id="ma_humidity_r" value="ma_humidity_r" class="checkbox " name="fn1">MA
+                Humd.sensor</label>
+            </div>
+            <div style="display: block;"><label class="text7 ">
+                <input type="checkbox" id="EWEA SENSOR" value="EWEA SENSOR" class="checkbox " name="fn1">EA
+                Temp.sensor</label>
+            </div>
+            <div style="display: block;"><label class="text7 ">
+                <input type="checkbox" id="RAT SENSOR" value="RAT SENSOR" class="checkbox " name="fn1">RA
+                Temp.sensor</label>
+            </div>
+            <div style="display: block;"><label class="text7 ">
+                <input type="checkbox" id="MAT SENSOR" value="MAT SENSOR" class="checkbox " name="fn1">MA
+                Temp.sensor</label>
+            </div>
+            <div style="display: block;"><label class="text7 ">
+              <input type="checkbox" id="DXET SENSOR" value="DXET SENSOR" class="checkbox " name="fn1">DX ENTERING
+              Temp.sensor</label>
+            </div>
+
+          </div>
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <div class="col-lg-4" style= "margin-top:180px">
+
+          <h5 style="background-color: yellow;width:auto">Common options</h5>
+          <div style="display: inline;"><label class="text7 ">
+              <input type="checkbox" id="FA" value="fire alarm" class="checkbox " name="fn1">fire alarm</label>
+
+          </div>
+          <div style="display: inline-block;"><label class="text7 ">
+              <input type="checkbox" id="FD" value="Flood_al" class="checkbox " name="fn1">Flooding
+              detector</label>
+
+          </div>
+          <div style="display: inline-block;"><label class="text7 ">
+              <input type="checkbox" id="NDPL" value="NDPL_al" class="checkbox " name="fn1">NDPL</label>
+
+          </div>
+          <div style="display: inline-block;"><label class="text7 ">
+              <input type="checkbox" id="HDSP" value="HDSP AL" class="checkbox " name="fn1">HDSP</label>
+          </div>
+          <div style="display: inline-block;"><label class="text7 ">
+            <input type="checkbox" id="Dehum Setpoint" value="Dehum Setpoint" class="checkbox " name="fn1">Dehum Setpoint</label>
+          </div>
+          <div style="display: inline-block;"><label class="text7 ">
+            <input type="checkbox" id="hgrc Setpoint" value="hgrc Setpoint" class="checkbox " name="fn1">hgrc Setpoint</label>
+          </div>
+          <div style="display: inline-block;"><label class="text7 ">
+            <input type="checkbox" id="AIR FLOW SWITCH ALARM" value="AIR FLOW SWITCH ALARM" class="checkbox " name="fn1">AFS</label>
+          </div>
+          
+          <div style="display: inline-block;"><label class="text7 ">
+            <input type="checkbox" id="Digital Compressor OUTPUT" value="Digital Compressor OUTPUT" class="checkbox " name="fn1">Digital Compressor OUTPUT</label>
+          </div>
+          <div style="display: inline-block;"><label class="text7 ">
+            <input type="checkbox" id="VFD Compressor OUTPUT" value="VFD Compressor OUTPUT" class="checkbox " name="fn1">VFD Compressor OUTPUT</label>
+          </div>
+          <div style="display: inline-block;"><label class="text7 ">
+            <input type="checkbox" id="ew_vfd_out" value="ew_vfd_out" class="checkbox " name="fn1">EW VFD OUTPUT</label>
+          </div>
+          <div style="display: inline-block;"><label class="text7 ">
+            <input type="checkbox" id="HEATER1" value="Heating Stage" class="checkbox " name="fn1"
+                    onclick="myFunction()">E.HEATER</label>
+            <input type="number" id="HEATER2" placeholder="qty" min="1" name="HEATERQTY">
+          </div>
+          <div style="display: inline-block;"><label class="text7 ">
+                  <input type="checkbox" id="GH1" value="GAS HEATER OUTPUT" class="checkbox " name="fn1"
+                          onclick="myFunction()">Gas Heater</label>
+                  <input type="number" id="GH2" placeholder="qty" min="1" name="GHQTY">
+          </div>
+
+          <div style="display: inline-block;"><label class="text7 ">
+                  <input type="checkbox" id="SD1" value="SD_flt1" class="checkbox " name="fn1" onclick="myFunction()">Smoke
+                  detector</label>
+                  <input type="number" id="SD2" placeholder="qty" min="1" name="SDQTY">
+          </div>
+          <div style="display: inline-block;"><label class="text7 ">
+                  <input type="checkbox" id="DPS1" value="Pre Filter Change Required" class="checkbox " name="fn1"
+                          onclick="myFunction()">Pre Filter switches</label>
+                  <input type="number" id="DPS2" placeholder="qty" min="1" name="DPSQTY">
+          </div>
+          <div style="display: inline-block;"><label class="text7 ">
+                  <input type="checkbox" id="DPS3" value="Final Filter Change Required" class="checkbox " name="fn1"
+                          onclick="myFunction()">Final Filter switches</label>
+                  <input type="number" id="DPS4" placeholder="qty" min="1" name="DPS3QTY">
+          </div>
+          <div style="display: inline-block;">
+            <label class="text7 "><input type="checkbox" id="SF1VFD" value="SF VFD %" class="checkbox " name="fn1" onclick="myFunction()">SF WITH VFD</label>   
+            <input type="number" id="SF2VFD" placeholder="qty" min="1" name="SFVFDQTY">
+          </div>
+          <div style="display: inline-block;">
+            <label class="text7 "><input type="checkbox" id="EF1VFD" value="EF VFD %" class="checkbox " name="fn1" onclick="myFunction()">EF WITH VFD</label>   
+            <input type="number" id="EF2VFD" placeholder="qty" min="1" name="EFVFDQTY">
+          </div>
+          <div style="display: inline-block;"><label class="text7 ">
+            <input type="checkbox" id="ZRH_R" value="ZRH_R" class="checkbox " name="fn1">Space sensor</label>
+          </div>
+          <div style="display: inline-block;"><label class="text7 ">
+            <input type="checkbox" id="OA DAMPER Output %" value="OA DAMPER Output %" class="checkbox " name="fn1">OA DAMPER Output %</label>
+          </div>
+          <div style="display: inline-block;"><label class="text7 ">
+            <input type="checkbox" id="EA DAMPER Output %" value="EA DAMPER Output %" class="checkbox " name="fn1">EA DAMPER Output %</label>
+          </div>
+          <div style="display: inline-block;"><label class="text7 ">
+            <input type="checkbox" id="RA DAMPER Output %" value="RA DAMPER Output %" class="checkbox " name="fn1">RA DAMPER Output %</label>
+          </div>
+          <div style="display: blinline-blockock;"><label class="text7 ">
+            <input type="checkbox" id="FRESH Damper1 S/S Status" value="FRESH Damper1 S/S Status" class="checkbox " name="fn1">FRESH Damper Status</label>
+          </div>
+          <div style="display: blinline-blockock;"><label class="text7 ">
+            <input type="checkbox" id="Heat Setpoint" value="Heat Setpoint" class="checkbox " name="fn1">Heat Setpoint</label>
+          </div>
+          <div style="display: blinline-blockock;"><label class="text7 ">
+            <input type="checkbox" id="Duct Pressure Reading" value="Duct Pressure Reading" class="checkbox " name="fn1">Duct Pressure Reading</label>
+          </div>
+          <div style="display: blinline-blockock;"><label class="text7 ">
+            <input type="checkbox" id="Bldg Static Pressure RDG" value="Bldg Static Pressure RDG" class="checkbox " name="fn1">Bldg Static Pressure RDG</label>
+          </div>
+
+
+        </div>
+<!-- /////////////////////////////////////////////////////////////////////////////////// -->
+
+        <div class="col-lg-4" style= "margin-top:180px">
+          <h5 style="background-color: yellow;width:130px">other options</h5>
+         
+          <div style="display: block;" id="WFS"><label class="text7 ">
+            <input type="checkbox" id="WATER FLOW SWITCH FAULT1" value="WATER FLOW SWITCH FAULT1" class="checkbox " name="fn1">WFS</label>
+          </div>
+          <div style="display: block;" id="SR"><label class="text7 ">
+            <input type="checkbox" id="SR1_Failure_Alarm" value="SR1_Failure_Alarm" class="checkbox" name="fn1" onclick="myFunction()">Speed Reg/CFM VFD</label>
+            <input type="number" id="SR2_Failure_Alarm" placeholder="qty" min="1" name="SRQTY">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+    <div class="row">
+      <div class="col-lg-12  col-xs-12 ">    
+        <!-- #################################### -->
+        <div class="file ">
+          <label for="file1" id="file1-label">Upload general sheet</label> 
+          <input type="file"   id="file1"  name="general file" accept=".xlsx,.xls,csv">
+          <label for="file2" id="file2-label" >Upload project sheet</label>
+          <input type="file" id="file2" name="project file" accept=".xlsx,.xls,csv">
+        </div>
+        <!-- #################################### -->
+
+          <div class="file " style="display: inline;">
+            <input type="submit" class="btn btn-primary hover-me  " value="Submit" style="margin-left: 20px">
+          </div>
+          <div style="display: inline;">
+            <input type="reset" class="btn btn-primary hover-me  " value="Reset Fields" style="margin-left: 20px;background-color:rgb(252, 9, 90)"">
+          </div>
+      </div>
+    </div>
+  </form>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,1 @@
+Supply damper will be opened prior to supply fan starting, and will be closed once the unit is off.

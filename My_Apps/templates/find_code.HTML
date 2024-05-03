@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+{% block body  %}
+
+ 
+
+
+    <div style="position:fixed; left:1750px; top:28px;margin-top:18px"><h5 style="color: red;">welcome {{username}}</h5></div>
+    <div class="row" >
+        <div class="col-lg-12  col-xs-12 ">
+            
+            <h1 class="text" style="margin-top: 50px; margin-left: 290px;">Find material</h1>
+            <form  action="/find_code" method="POST"  id="find_code_form" enctype="multipart/form-data"  >  <!--post means to post to server-->
+                <div class="row" >
+                    <div class="col-lg-12  col-xs-12 ">
+                        <div class="search_find_code"> 
+                            <input type="text"   id="search"  name="find_code" placeholder="write here the keywords"  required autofocus value="{{search_words}}">  
+                        </div>
+                        <div class="new-btnf" >
+                            <button type="submit"  id="Search_code" name="Search_code" onclick="show_find_code_table()"><i class="fa-regular fa-square-plus"></i>Search</button>
+                            <button type="submit" id="open_it_as_excel" name="open_it_as_excel">open it as excel</button><br>
+                            
+                            <p1>"+" for And</p1>
+                            <div class="epicor">
+                              <input type="checkbox" id="epicor" name="epicor" value="epicor">
+                              <label for="epicor"> Search by Epicor Code</label><br>
+                            </div>
+                            <br>
+                            <br>
+                           
+
+                            
+                        </div>
+                    </div>
+                </div>
+                  <div class="row" >
+                  <div class="col-lg-12" >
+                    <table id="find_code_table" class="find_code_table ">
+                        <thead > 
+                            <tr>
+                                <th colspan="1" id="tb1"><input type="text" placeholder="Code" class="search-input"></th>      <!--colspan is used to define how many column for each header-->
+                                <th colspan="1" id="tb2"><input type="text" placeholder="Desc" class="search-input"></th>
+                                <th colspan="1" id="tb3"><input type="text" placeholder="Demand" class="search-input"></th>
+                                <th colspan="1" id="tb4"><input type="text" placeholder="On Hand" class="search-input"></th>
+                                <th colspan="1" id="tb5"><input type="text" placeholder="UOM" class="search-input"></th>
+                                <th colspan="1" id="tb6"><input type="text" placeholder="Cost" class="search-input"></th>
+                                <th colspan="1" id="tb7"><input type="text" placeholder="currency" class="search-input"></th>
+                                <th colspan="1" id="tb8"><input type="text" placeholder="Supplier" class="search-input"></th>
+                                <th colspan="1" id="tb9"><input type="text" placeholder="Supplier ID" class="search-input"></th>
+                                <th colspan="1" id="tb10"><input type="text" placeholder="Origin" class="search-input"></th>
+                                <th colspan="1" id="tb11"><input type="text" placeholder="Last PO" class="search-input"></th>
+            
+                            </tr>
+                               <div class="error_message_find_code">
+                                        {% with messages1 = get_flashed_messages() %}
+                                        {% if messages1 %}
+                                          
+                                        {% for message in messages1 %}
+                                            <span id="alarm_message" class="alert-error">{{ message }}</span>
+                                        {% endfor %}
+                                        {% endif %}
+                                        {% endwith %}
+                                </div>
+                        </thead>
+                        <tbody>
+                             {% for row in range (0,code|length)%}
+                            <tr>
+                              <td >
+                                {{code[row]}}
+                              </td >
+                              <td >
+                                {{desc[row]}}
+                              </td>
+                              <td >
+                                {{demand[row]}}
+                              </td>
+                              <td >
+                                {{onhand[row]}}
+                              </td>
+                              <td >
+                                {{uom[row]}}
+                              </td>
+                              <td >
+                                {{cost[row]}}
+                              </td>
+                              <td >
+                                {{currency[row]}}
+                              </td>
+                              <td >
+                                {{supplier[row]}}
+                              </td>
+                              <td >
+                                {{supplierid[row]}}
+                              </td>
+                              <td >
+                                {{origin[row]}}
+                              </td>
+                              <td >
+                                {{lastpo[row]}}
+                              </td>
+
+                            </tr>
+                            {% endfor %} 
+                            
+                             
+                        </tbody>
+                    </table>
+                </div>
+                
+
+            </form>
+        </div>
+    </div> 
+
+
+
+
+
+{% endblock %} 

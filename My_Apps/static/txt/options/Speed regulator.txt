@@ -1,0 +1,3 @@
+The Condenser fans will be switched on upon compressors cut in.The speed regulator will regulate the condenser speed to achieve the required head pressure.
+
+

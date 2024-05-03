@@ -1,0 +1,5 @@
+In the cooling mode, as the Return Air Temperature rises above the Set point, the VFD Compressor will stage on and modulate to control to the Set point.
+If additional cooling is required, the VFD Compressor continues to modulate up to its maximum capacity.
+To stage up the extra compressor(s), the Return Air Temperature needs to be above the Set point and the VFD Compressor needs to be at 100% then second compressor is enabled & VFD compressor will go to minimum capacity and modulate up as needed.
+To stage down the extra compressor(s), the Return Air Temperature needs to be below the Set point and the VFD Compressor needs to be at 0% for a period of time equal to the Stage Down Delay.
+For compressors to stage down, Minimum Run Times must be satisfied as well as Stage Down Delays (adjustable). The VFD compressor is always the last compressor to be deactivated.

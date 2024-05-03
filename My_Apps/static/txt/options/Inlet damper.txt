@@ -1,0 +1,1 @@
+Inlet damper will be opened prior to supply fan starting, and will be close once the unit is off.

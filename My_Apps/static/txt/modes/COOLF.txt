@@ -1,0 +1,6 @@
+The compressor (s) start/stop command is a function of supply air temperature. Once set point (SP) has been established for
+supply air temperature, the action taken by the controller to bring the system as near to the set point as possible will be
+proportional to the systems distance from set point. 
+Once a proportional band(DF) has been established around the set point, the controller will produce the most limited action
+at the set point whilst controller performance will increase No. of required compressor by one as supply air temp deviates 
+more and more from its target. if supply air temperature increase to the: SP+DF, all compressors will be ON.

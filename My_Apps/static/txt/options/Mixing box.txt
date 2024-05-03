@@ -1,0 +1,2 @@
+The unit have return and fresh modulating dampers. The dampers opens with specific percentage to amke the requried air mixing.
+The percentage of opening can be changed manually through controller LCD.

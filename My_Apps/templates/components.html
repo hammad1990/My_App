@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+
+{% block body  %}
+
+<div class="container">
+  <div style="position:fixed; left:1750px; top:28px;margin-top:18px"><h5 style="color: red;">welcome {{username}}</h5></div>
+  <div class="row" >
+    <div class="col-lg-12  col-xs-12 ">
+      <div class="text" style="margin-top:40px ;">
+
+        USA components generator
+    </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <!-- <form id="components_form">  -->
+      <form id="components_form" action="/components" method="POST"> 
+        <div class="row" >
+          <div class="col-lg-12 ">
+            <div class="co_informations">
+              <!-- ########################## item info ############## -->
+              <label  class="co_label">Item informations<span class="required">*</span></label>
+              <input type="number" id="co_project_no" placeholder="Project Number"  name="co_project_no" required>
+              <input type="text" id="co_item_model" placeholder="Item Model"  name="co_item_model" required>
+              <input type="number" id="co_item_qty" placeholder="Item Qty"  name="co_item_qty" required>
+              <input type="number" id="co_item_no" placeholder="Item Number"  name="co_item_no" required>
+              <input type="text" id="co_item_ref" placeholder="Item Ref"  name="co_item_ref" required>
+              <input type="number" id="co_ambient" placeholder="Ambient"  name="co_ambient" required>
+              <select class="co-volt" name="co_voltage" id="co_voltage"  required>
+                <option value="">---</option>
+                <option value="208V-3-60Hz">208V-3-60Hz</option>
+                <option value="220V-3-60Hz">220V-3-60Hz</option>
+                <option value="230V-3-60Hz">230V-3-60Hz</option>
+                <option value="460V-3-60Hz">460V-3-60Hz</option>
+                <option value="480V-3-60Hz">480V-3-60Hz</option>
+              </select>
+              <!-- ########################## compressors info ############## -->
+              <label  class="co_label">compressors<span class="required">*</span></label>
+              <div class="co_add_220">
+                <button id="co_add_compressor_220" class="co_add_compressor_220" type="button">
+                  <i class="fa-regular fa-square-plus"></i>
+                </button>
+              </div>
+              <div class="co_add_460">
+                <button id="co_add_compressor_460" class="co_add_compressor_460" type="button">
+                  <i class="fa-regular fa-square-plus"></i>
+                </button>
+              </div>
+             
+              <div class="newcompressors">
+              </div>
+              <!-- ########################## condenser info ############## -->
+              <label  class="co_label">Condenser fans</label>
+              <select  id="co_cond" class="form-select" style="display: inline ; width:180px;height:30px;margin:0px;padding:0px" name="co_cond_model">
+                <option value=" ">Model</option>
+                <option value="No Condenser Fans">No Condenser Fans</option>
+                <option value="FN063-6DK.4I.V7P1" >FN063-6DK.4I.V7P1 </option>
+                <option value="FG091-SDK.6N.V5P1" >FG091-SDK.6N.V5P1</option>
+                <option value="ZC080-SDL.6N.V7" >ZC080-SDL.6N.V7</option>
+                <option value="S6D910AB0505-DB" >S6D910AB0505-DB</option>
+                <option value="S6D630-AB0715" >S6D630-AB0715</option>
+                <option value="S6D800-AE05-09" >S6D800-AE05-09</option>
+              </select>
+              <input type="number" id="co_cond_qty"  style=" width:95px;height:30px;;margin:0px;padding:0px" placeholder="qty"  name="co_cond_qty">
+              <select  id="co_cond_vee" class="form-select" style="width:150px;height:30px;;margin:0px;padding:0px" name="co_cond_vee">
+                <option value=" ">No. of Vee </option>
+                <option value="Flat coil" >Flat coil</option>
+                <option value="1Vee" >1Vee</option>
+                <option value="2Vee" >2Vee</option>
+              </select>
+              <select  id="co_cond_speed" class="form-select" style="width:auto;height:30px;;margin:0px;padding:0px" name="co_cond_speed">
+                <option value=" ">No speed or VFD </option>
+                <option value="Speed-10A-UL-ZIEHL-PKDM10" >Speed-10A-UL-ZIEHL-PKDM10</option>
+                <option value="FREQUENCY INVERTOR UL-ABB-ACS150-03U-07A5-2-1.5KW-2HP(208V)[RECN3006013]" >FREQUENCY INVERTOR UL-ABB-ACS150-03U-07A5-2-1.5KW-2HP(208V)[RECN3006013]</option>
+                <option value="FREQUENCY INVERTOR UL-ABB-ACS150-03E-04A1-4--1.5KW-2HP(480V)[RECN3006011]" >FREQUENCY INVERTOR UL-ABB-ACS150-03E-04A1-4--1.5KW-2HP(480V)[RECN3006011]</option>
+                <option value="FREQUENCY INVERTOR UL-ABB-ACS150-03E-05A6-4--2.2KW-3HP(480V)[RECN3007013]" >FREQUENCY INVERTOR UL-ABB-ACS150-03E-05A6-4--2.2KW-3HP(480V)[RECN3007013]</option>
+                <option value="FREQUENCY INVERTOR-UL- ABB-ACH580-01-012A-2-3KW-4HP(208V)[RECN3007017]" >FREQUENCY INVERTOR-UL- ABB-ACH580-01-012A-2-3KW-4HP(208V)[RECN3007017]</option>
+                <option value="FREQUENCY INVERTOR ABB-ACH580-01-09A5-4+J400-4KW-5.36HP(480V)[RECN3009019]" >FREQUENCY INVERTOR ABB-ACH580-01-09A5-4+J400-4KW-5.36HP(480V)[RECN3009019]</option>
+              </select>
+                <!-- ########################## supply + return+EW info ############## -->
+              <label  class="co_label">Fans<span class="required">*</span></label>
+              <div class="co_add_fans_all">
+                <button id="co_add_fans" class="co_add_fans" type="button">
+                  <i class="fa-regular fa-square-plus"></i>
+                </button>
+              </div>
+              
+              <div class="newfans">
+              </div>
+
+               <!-- ######################################## -->
+              <div class="co-seq-buttons">
+                <input type="submit" name="co_submit" id="co_submit" class="btn btn-primary " value="Generate Component" >
+              </div>
+                
+            </div>
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </form>
+      
+
+      
+    </div>
+
+  </div>
+</div>
+
+{% endblock %} 

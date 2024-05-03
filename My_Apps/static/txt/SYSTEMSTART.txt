@@ -1,0 +1,3 @@
+While starting up the system ,the unit will turn on. After that ,the controller will check the status if there is
+alarm or not .After confirming the healthy status of the unit, the controller gives command for command supply fan motor.
+Compressors will start after the supply fan start, based on the setpoint the controller will decide the running compressors.

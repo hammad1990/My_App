@@ -1,0 +1,4 @@
+if defrost air temp became below specific degree, e.g. (-2c) and condenser coil differential pressure became above adjusted 
+setpoint, then unit will go to defrost cycle in which 4-way valve will reverse and compressors will work for at least minimum 
+time (3 min)  until defrost air temp become above setpoint, e.g.(10c)  to remove the ice on condenser coil. After that the 
+unit will return back to heat pump mode.

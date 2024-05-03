@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+
+
+{% block body  %}
+
+
+    <div class="container">
+            <div style="position:fixed; left:1750px; top:28px;margin-top:18px"><h5 style="color: red;">welcome {{username}}</h5></div>
+       
+            <div class="row" >
+                <div class="col-lg-12  col-xs-12 ">
+                    <div class="text" style="margin-top:40px ;">
+
+                        Heaters Calculator
+                    </div>
+                    
+                </div>
+            </div>
+            
+
+            <div class="row" >
+           
+                <div class="col-lg-4 col-sm-12" >
+                        <form id="heater_form" action="/heater" method="POST" onsubmit="show_heater_table()">  <!--post means to post to server-->
+                            <div class="form-group ">
+                                <p >Enter heater KW</p>
+                                <input type="number" step="any" id="number" name="heatercap" placeholder="put here heater KW" required autofocus value="{{heatercap}}" >
+                                {% with messages = get_flashed_messages() %}
+                                {% if messages %}
+                                {% for message in messages %}
+                                    <h6 style="color: yellow;font-size:15px">{{ message }}</h6>
+                                {% endfor %}
+                                {% endif %}
+                                {% endwith %}
+
+                                <p >Please select voltage:</p>
+                                <label class="text5 ">
+                                <input  type="radio" name="volt"  id="220v" value="220" required>
+                                208/220/230/240/380/400/415</label>
+                                <label class="text5 ">                 
+                                <input type="radio" name="volt" id="270v"  value="270">
+                                440/460/480</label>
+                                <p >select No. of the stages</p>
+                                <select class="form-select" style="display: block ; width:95px;height:40px"name="stage" id="stage" required>
+                                    <option value="">None</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                                <input type="submit"   class="btn btn-primary "  name="Run" value="Run" style="width: 68px; text-align:center;margin: left 3px;">
+                                <input type="submit"   class="btn btn-primary " name="Send Email" value="Send Email" style="width: 100px; text-align:center;margin: left 3px;">
+                            
+                            </div> 
+                        </form>
+                </div>
+            <!------------------------------------------------------------------------------------- -->
+                <div class="col-lg-8 col-sm-12"> 
+                    <div class="row" >
+                        <div class="col-lg-2 col-sm-2" id="heater_sides1" style="text-align: center; font-size:16px;margin-top:65px" >
+                            <div class="inner">
+                                stage1
+                            </div>
+                            <div class="inner">
+                                stage2
+                            </div>
+                            <div class="inner">
+                                stage3
+                            </div>
+                            <div class="inner">
+                                stage4
+                            </div>
+                            <div class="inner">
+                                stage5
+                            </div>
+                            <div class="inner">
+                                stage6
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-sm-8 table--t" >
+                            <table  id="heater_table" class="table" >
+                                <thead > 
+                                    <tr>
+                                        <th colspan="3">R</th>
+                                        <th colspan="3">S</th>
+                                        <th colspan="3">T</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for row in mat%}
+                                    <tr>
+                                        {% for col in range (0,row|length) %}
+                                                <td>
+                                                    {{mat[mat.index(row)][col]}}
+                                                </td>
+                                        {% endfor %} 
+                                    </tr>
+                                    {% endfor %}  
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="heater_sides2" class="col-lg-2 col-sm-2" style="text-align: center; font-size:16px;margin-top:65px; width:12.6%">
+                            <div class="inner1">
+                                <label>={{sum1}}</label>
+                            </div>
+                            <div class="inner1">
+                                <label>={{sum2}}</label>
+                            </div>
+                            <div class="inner1">
+                                <label>={{sum3}}</label>
+                            </div>
+                            <div class="inner1">
+                                <label>={{sum4}}</label>
+                            </div>
+                            <div class="inner1">
+                                <label>={{sum5}}</label>
+                            </div>
+                            <div class="inner1">
+                                <label>={{sum6}}</label>
+                            </div>
+                            
+                        </div>
+                    </div>       
+              
+                   
+                </div>
+            </div> 
+            <div class="row" id="table_output">        
+                    <div class="col-lg-12 col-md-6" style="margin-top:10px;font-size:20px">
+                        <div style="margin-top: 10px;margin-left:500px">
+                            <label class="special">Requested capacity(KW)=</label>
+                            <label class="inner2" >{{heatercap}}</label>
+                        </div>
+                        <div style="margin-top: 10px;margin-left:500px" >
+                            <label class="special" >Applicable capacity(KW)=</label>
+                            <label  class="inner2" >{{totalkw}}</label>
+                        </div>
+                    </div>
+            </div>
+                 
+        
+        </div>  
+
+    </div>
+        
+{% endblock %}     
+
+ 

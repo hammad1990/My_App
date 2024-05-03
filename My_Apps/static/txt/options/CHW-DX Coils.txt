@@ -1,0 +1,3 @@
+The unit has two cooling coils, Chilled water and DX.The chilled water coil is the Duty one while the DX coil is the Standby. The automatic changeover process between the Chilled water coil and DX coils occurs in case:
+1-The water out temperature reached 15 degree (adj).
+2-Water flow switch signal (the switch itself by others) is de-energized.

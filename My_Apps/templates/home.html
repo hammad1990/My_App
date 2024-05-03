@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block body  %}
+
+ 
+
+<div class="container">
+  <div style="position:fixed; left:1750px; top:28px;margin-top:18px"><h5 style="color: red;">welcome {{session["user"]}}</h5></div>
+  <div class="row" >
+    <div class="col-lg-12  col-xs-12 ">
+        <div class="text">
+          <h1 style="margin-top: 50px">welcome to My App</h1>
+            <h5> Created By Mohammad Hammad</h5>
+            <div class="col=lg-8 table--t" >
+              <table  class="table ">
+                <tbody>
+                  {% for user in range (0,all_users|length) %}
+                  <tr>
+                      <td>
+                          {{all_users[user]}}:{{all_counts[user]}}
+                      </td>
+                  </tr>
+                  {% endfor %}  
+                  <!-- <h5>weekly counter: {{week_count}}</h5>  -->
+                  
+                  <!-- <h1 style="color:yellow">{{Rsection}}</h1> -->
+                
+                </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+  </div>
+  </div> 
+
+
+</div>
+
+
+{% endblock %}   
+
+
+
+ 
+

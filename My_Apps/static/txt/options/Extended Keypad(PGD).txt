@@ -1,0 +1,6 @@
+The unit can be equipped with extended keypad to be installed at suitable place at site.Through this keypad , user can do the following:
+1-Start/Stop the unit.
+2-Change Unit setpoint.
+3-Check all alarms and reset them.
+4-Check all sensors readings.
+The keypad is supplied with 1.5m cable as standard from the factory.Anyway, the maximum cable distance is 50mtr and the cable type is Telephone-RJ12.

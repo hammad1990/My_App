@@ -1,0 +1,1 @@
+The first stage of electric heaters is controlled by SCR (Thyristor control) by signal from PETRA controller.

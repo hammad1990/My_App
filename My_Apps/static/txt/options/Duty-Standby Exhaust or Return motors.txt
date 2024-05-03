@@ -1,0 +1,1 @@
+The unit has two Exhaust/Return fan motors works in duty/standy basis.In case the duty motor tripped on (overload,internal thermal protection,etc) then the stand by motor started after some delay time(10s),knowing that the cooling/heating process will not stop during the changeover process. 

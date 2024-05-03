@@ -1,0 +1,1 @@
+When any alarm occurs, remote relay will be energized & the alarm symbol will be blinking on the controller LCD.

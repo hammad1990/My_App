@@ -1,0 +1,3 @@
+The VFD will measure the building static pressure and will modulate the exhaust/return fan speed to maintain a building static pressure set point of 0.005 inch WC (adj.).
+The exhaust/return fan will be controlled by building Static Pressure Transducer  (- 0.250) to (+ 0.250)   inch WC (installed and supplied by Petra is connected directly to the VFD).
+Note: Static pressure tubing provided by contractor to be located in ductwork where required.

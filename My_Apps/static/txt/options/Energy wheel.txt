@@ -1,0 +1,1 @@
+The energy wheel motor is started prior to supply fan starting, it's used to make heat exchange for fresh air temperature entering DX coil.The wheel will keep working as the unit is enabled.

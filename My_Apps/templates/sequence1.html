@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block body  %}
+<div class="container">
+  <div class="row" >
+    <div class="col-lg-12  col-xs-12 ">
+        <div class="text" style="margin-top:40px ;">
+
+            Sequence Of Operation 
+        </div>
+        
+    </div>
+  </div> 
+    <div style="position:fixed; left:1750px; top:28px;margin-top:18px"><h5 style="color: red;">welcome {{username}}</h5></div>
+    <form  action="/sequence1" method="POST">
+      <div class="row" >
+        <div class="col-lg-12  col-xs-12 ">
+          <div class="new-btn">
+            <button name="New_Project"><i class="fa-regular fa-square-plus"></i>New Project</button>
+          </div>
+          
+        </div>
+      </div>
+      <div class="row" >
+        <div class="col-lg-12  col-xs-12 ">
+          <div class="new-btn">
+            <button type="button" id="search_SOO" name="Search_Project" onclick="show_SOO_table()"><i class="fa-regular fa-square-plus"></i>Search from old SOO</button>
+            
+          </div>
+        </div>
+      </div>
+      
+      <div class="row" >
+
+        
+      <div class="col=lg-12 table--t1" >
+        <!-- <h3>
+          <span>JavaScript Filter Table Data</span>
+          <input type="search" placeholder="Search..." class="form-control search-input" onkeyup="myFunctiontd()" id="myInput">
+        </h3> -->
+        <table id="SOO_table" class="table ">
+            <thead > 
+                <tr>
+                    <th colspan="1"><input type="text" placeholder="User" class="search-input"></th>      <!--colspan is used to define how many column for each header-->
+                    <th colspan="1"><input type="text" placeholder="Project Name" class="search-input"></th>
+                    <th colspan="1"><input type="text" placeholder="Revision No." class="search-input"></th>
+                    <th colspan="1"><input type="text" placeholder="Country" class="search-input"></th>
+
+                </tr>
+            </thead>
+            <tbody>
+              
+
+                 {% for row in range (0,UserNames|length)%}
+                <tr>
+                  <td >
+                    {{UserNames[row]}}
+                  </td >
+                  <td >
+                    <a href="sequence1/{{Pnames[row]}}">{{Pnames[row]}}</a>
+                  </td>
+                  <td>
+                    {{Revisions[row]}}
+                  </td>
+                  <td>
+                    {{Countries[row]}}
+                  </td>
+                   
+                </tr>
+                {% endfor %} 
+                
+                 
+            </tbody>
+        </table>
+    </div>
+    </div>
+    </form>
+  
+  
+ 
+
+
+</div>
+{% endblock %} 

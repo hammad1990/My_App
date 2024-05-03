@@ -1,0 +1,2 @@
+The steam humdifier is enable if the return/room humidity reading is below setpoint (e.g. 50RH% adj).The controller will give 0-10V modualting signal to steam humidifer controller to achieve the required setpoint.
+

@@ -1,0 +1,1 @@
+If fire alarm signal present(Normally closed signal coming from fire alarm panel) the unit  is allowed to start, if the signal is missing then the unit will be stopped.

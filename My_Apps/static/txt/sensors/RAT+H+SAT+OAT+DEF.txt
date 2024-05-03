@@ -1,0 +1,4 @@
+1-Supply air temperature sensor.
+2-Outside air temperature sensor.
+3-Return air temperature/humidity sensor.
+4-Defrost air sensors.

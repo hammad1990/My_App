@@ -1,0 +1,1 @@
+The liquid solenoid valves is started with compressors and stop by maunal switches  before compressors de-energized in order to keep the refrigerant charge locked.

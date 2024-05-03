@@ -1,0 +1,1 @@
+Flooding detector is installed at the DX coil section outside the drain pan .It's used to detect any clogging in the drain pipes which will overflow the water in the drain pan.If flooding detected , then unit will stop immediately.

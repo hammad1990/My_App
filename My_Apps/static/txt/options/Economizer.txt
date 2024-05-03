@@ -1,0 +1,2 @@
+The unit have return , fresh and exhaust modulating dampers. The dampers work as economizer (free cooling) based on the return and fresh air temperature.
+So in case outside air temperature are lower specific value then outside damper will be opened more than the return damper to get the cold air inside the building.
