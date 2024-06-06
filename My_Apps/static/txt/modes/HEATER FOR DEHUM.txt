@@ -1,7 +1,0 @@
-In this mode heaters will start when below conditions are satisfied:
-1-Supply fan is started.
-2-Room/return humidity reading  is above humidity setpoint( 50%-adj).
-3-Supply temperature reading is below reheat setpoint (13c).
-4-Supply temperature reading is above low supply limit (10c). 
-Unit will make deep cooling by keep the compressors swithced on and then the heaters will start to maintain supply
-temperature.Anyhow, the process will continue until any of the above conditions became not satisfied.
