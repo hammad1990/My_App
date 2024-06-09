@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+
+{% block body  %}
+
+<div class="container">
+    <div style="position:fixed; left:1750px; top:28px;margin-top:18px"><h5 style="color: red;">welcome {{username}}</h5></div>
+    <div class="row" >
+        <div class="col-lg-12  col-xs-12 ">
+            
+            <h1 class="text" style="margin-top: 50px">Add/Edit Supplier Emails</h1>
+            <form  action="/add_supplier" method="POST" enctype="multipart/form-data"  >  <!--post means to post to server-->
+                
+             
+                <div class="dropdown">
+                    <input list="suppliers1" name="suppliers1" id="suppliers" placeholder="Search for supplier">
+                    <datalist id="suppliers1">
+                        {% for s in supplier %}
+                            <option value="{{s}}">
+                        {% endfor %}
+                    </datalist>
+                   
+                </div>
+                <div style="color: yellow;font-size:15px;display:block">
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    {% for message in messages %}
+                    <h6 style="color: yellow;font-size:15px;display:block">{{ message }}</h6>
+                    {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+                </div>
+
+
+                <div class="file" style="margin-top: 70px;margin-left: 480px" >
+                   
+                    <input   type="submit"  class="btn btn-primary hover-me " value="Show emails" style="margin-left: 20px" >
+                </div>
+                
+
+            </form>
+        </div>
+    </div> 
+
+
+</div>
+
+
+{% endblock %}     
+

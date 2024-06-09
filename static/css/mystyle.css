@@ -663,8 +663,8 @@ padding: 3px;
 /* search supplier  */
 
 .dropdown {
-  position: absolute;
-  right: 950px;
+  position: relative;
+  left: 450px;
   display: block;
 }
 

@@ -10,6 +10,7 @@ from views.logout import logout
 from views.components import components
 from views.RFQ import RFQ
 from views.find_code import find_code
+from views.add_supplier import add_supplier
 from views.test1 import test1
 
 
