@@ -68,8 +68,10 @@ class Config:
 
     # CREATE new txt file for protections(works on any pcs)
     protections= os.path.join(os.getcwd(),'static\\txt','protections.txt')
-    # CREATE new txt file for protections(works on any pcs)
+    # CREATE new txt file for modes(works on any pcs)
     modes= os.path.join(os.getcwd(),'static\\txt\\')
+
+   
 
 
 
