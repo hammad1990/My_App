@@ -8,7 +8,7 @@ from config import Config
 
 add_supplier=Blueprint("add_supplier",__name__,template_folder='templates',static_folder='static')
 
-def __init__(self,suppliers):
+def __init__(self):
     super(self).__init__()
     
 
@@ -20,60 +20,43 @@ def add_supplier_func():
     if "user"in session:
         username=session["user"]
     if request.method=="POST":
-        supplier=[]
-        final_emails=[]
-        suppliers1=request.form['suppliers1'] 
-        conn = pyodbc.connect(Config.DATABASE_PARAMETER)
-        # get supplier email if exist
-        query=f"SELECT email1,email2,email3,email4,email5,email6,email7,email8 FROM suppliers WHERE Supplier='{suppliers1}'"
-        rows=cursor.execute(query)
-        rows=rows.fetchall()
-        conn.commit()
-        conn.close()
-        if rows:
-          for row in range (0,len(rows)):
-            
-            emails.append(rows[row]) 
-          emails = [item for t in emails for item in t]  #convert list of tubles coming from SQL to list
-          # print(emails)
-          # print(len(emails))
-          for x in range(0,len(emails)):
-            if emails[x]is None:
+        add_count()
+        new_emails_list=[""] * 8
+        print(new_emails_list)
+        the_new_supp_name=request.form['add_new_supplier']##### the new supplier name
+        x_list=request.form.getlist('emails_texts[]')### get all emails entered
+        
 
-              pass
-            else:
-              emails1.append(emails[x])
-          # print(emails1)
-          # return render_template("RFQ.html",username=username,supplier=supplier,final_emails=final_emails) 
-          
-    
 
-          if len(emails1)==0:
-
-            print("final email=0")
-            flash('No emails found for this supplier, please update the database', "error")
-            return render_template("RFQ.html",username=username,supplier=supplier,final_emails=final_emails)  
-          
-        # print(emails1)
-        emails1=[string.replace("'","") for string in emails1]
-        # print(emails1)
-        emails1=[string.strip() for string in emails1]
-        print(emails1)
-        return render_template("add_supplier.html",supplier=supplier)
-    else:
-        supplier=[]
+        # add the new supplier+ emails to database
         conn = pyodbc.connect(Config.DATABASE_PARAMETER)
         cursor=conn.cursor()
-        
-        query=f"SELECT Supplier FROM suppliers"
+        query=f"select Supplier from suppliers where Supplier='{the_new_supp_name}'"
         rows=cursor.execute(query)
-        rows=rows.fetchall()
+        rows=rows.fetchone()
+        print(rows)
         # conn.commit()
         # conn.close()
-        if rows:
+
+        if rows is not None:
+          print("Supplier name is already taken")
+          flash("Supplier name is already taken...",'error')
+          return render_template("add_supplier.html",username=username,new_emails_list=new_emails_list,the_new_supp_name=the_new_supp_name)
+        else:
+          print("new supplier name")
+          for x in range (0,len(x_list)):
+             new_emails_list[x]=x_list[x]
+             
+          # query=f"INSERT  INTO suppliers ("",Supplier,email1,Tele1,email2,Tele2,email3,Tele3,email4,Tele4,email5,Tele5,email6,Tele6,email7,Tele7,email8,Tele8) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
+          # val=("",the_new_supp_name, new_emails_list[0],"",new_emails_list[1],"",new_emails_list[2],"",new_emails_list[3],"",new_emails_list[4],"",new_emails_list[5],"",new_emails_list[6],"",new_emails_list[7],"")
+
+          cursor.execute("INSERT  INTO suppliers (0,Supplier,email1,Tele1,email2,Tele2,email3,Tele3,email4,Tele4,email5,Tele5,email6,Tele6,email7,Tele7,email8,Tele8) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",("",the_new_supp_name, new_emails_list[0],"",new_emails_list[1],"",new_emails_list[2],"",new_emails_list[3],"",new_emails_list[4],"",new_emails_list[5],"",new_emails_list[6],"",new_emails_list[7],"" ))
+
+          # cursor.execute(query,val)
+          conn.commit()
+          conn.close()
         
-            for row in range (0,len(rows)):
-            
-                supplier.append(rows[row]) 
-        supplier = [item for t in supplier for item in t]  #convert list of tubles coming from SQL to list
-        return render_template("add_supplier.html",supplier=supplier)
+        return render_template("add_supplier.html",username=username,new_emails_list=new_emails_list,the_new_supp_name=the_new_supp_name)
+    else:
+        
+        return render_template("add_supplier.html",username=username)

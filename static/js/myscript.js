@@ -850,18 +850,23 @@ $(co_add_fans).click(function(e){ //on add input button click
 $(document).on("change",".co_fans_type", function(){ 
   var co_fans_type = $(this).find(":selected").val();
   if (co_fans_type==="E.wheel"){
-    $(this).nextAll(".co_fans_hp").remove();
+    $(this).nextAll(".co_fans_hp").hide();
+    $(this).nextAll(".co_ew_model").show();
     $(this).nextAll(".co_fansvfd").val('ACH580-01-03A4-4-460V[RECN3005010]');
   }
   else if(co_fans_type==="Supply"){
-    $(this).nextAll(".co_ew_model").remove();
+    $(this).nextAll(".co_ew_model").hide();
+    $(this).nextAll(".co_fans_hp").show();
+    console.log("fddf")
   }
   else if(co_fans_type==="Exhaust"){
-    $(this).nextAll(".co_ew_model").remove();
+    $(this).nextAll(".co_ew_model").hide();
+    $(this).nextAll(".co_fans_hp").show();
    
   }
   else if(co_fans_type==="Return"){
-    $(this).nextAll(".co_ew_model").remove();
+    $(this).nextAll(".co_ew_model").hide();
+    $(this).nextAll(".co_fans_hp").show();
    
   }
 });
@@ -933,6 +938,48 @@ function show_find_code_table(){
 }
 
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////add suppliers emails/////////////////
+var x3=0
+var max_fields2      = 6; //maximum input boxes allowed
+var add_emails_btn     = $(".add_emails_btn"); //Add emails button ID
+
+var newdiv2=$(".suppliers_emails");
+
+
+$(add_emails_btn).click(function(e){ //on add input button click
+  e.preventDefault();
+ 
+      if(x3 <= max_fields2){ //max input box allowed
+          x3++; //text box increment
+          var input3 =  '<div>\
+                          <input type="text"  id="emails_texts'+x3+'" name="emails_texts[]" placeholder="write email'+x3+'" required>\
+                          <button class="btn btn-outline-danger remove_field_emails" type="button">Remove</button>\
+                          <br></div>'
+          $(newdiv2).append(input3);
+         
+        }
+                          
+      else{
+        alert('You can add maximum 6 input fields.');
+      }
+      
+      return false
+  });
+
+  //////////////////////////////////
+  $(document).on("click",".remove_field_emails", function(e){ //user click on remove text
+    e.preventDefault(); 
+    $(this).parent('div').remove(); 
+    x3--;
+    return false
+    });
+  //////////////////////////////////
+
+ 
 
 
 // ###################### END  ##########

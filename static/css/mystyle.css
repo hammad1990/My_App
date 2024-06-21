@@ -812,3 +812,28 @@ border-radius: 20px;
   background-color: #5cb85c;
   width: fit-content;
 }
+
+/* add/edit supplier */
+
+
+
+.add_new_supplier_name  {
+  display: block;
+  position: relative;
+  left: 490px;
+  top: 20px;
+}
+.suppliers_emails{
+  display: block;
+  position: relative;
+  left: 490px;
+  top: 40px;  
+
+}
+.h2_emails{
+  color: white;
+  display: block;
+  position: relative;
+  left: 490px;
+  top: 40px; 
+}
