@@ -22,13 +22,12 @@ def add_supplier_func():
     if request.method=="POST":
         add_count()
         new_emails_list=[""] * 8
-        print(new_emails_list)
         the_new_supp_name=request.form['add_new_supplier']##### the new supplier name
         x_list=request.form.getlist('emails_texts[]')### get all emails entered
         
 
 
-        # add the new supplier+ emails to database
+        # check if supplier name is already exists in database
         conn = pyodbc.connect(Config.DATABASE_PARAMETER)
         cursor=conn.cursor()
         query=f"select Supplier from suppliers where Supplier='{the_new_supp_name}'"
@@ -47,12 +46,12 @@ def add_supplier_func():
           for x in range (0,len(x_list)):
              new_emails_list[x]=x_list[x]
              
-          # query=f"INSERT  INTO suppliers ("",Supplier,email1,Tele1,email2,Tele2,email3,Tele3,email4,Tele4,email5,Tele5,email6,Tele6,email7,Tele7,email8,Tele8) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
-          # val=("",the_new_supp_name, new_emails_list[0],"",new_emails_list[1],"",new_emails_list[2],"",new_emails_list[3],"",new_emails_list[4],"",new_emails_list[5],"",new_emails_list[6],"",new_emails_list[7],"")
+          query=f"INSERT  INTO suppliers (Supplier,email1,email2,email3,email4,email5,email6,email7,email8) VALUES (?,?,?,?,?,?,?,?,?)"
+          val=(the_new_supp_name, new_emails_list[0],new_emails_list[1],new_emails_list[2],new_emails_list[3],new_emails_list[4],new_emails_list[5],new_emails_list[6],new_emails_list[7])
 
-          cursor.execute("INSERT  INTO suppliers (0,Supplier,email1,Tele1,email2,Tele2,email3,Tele3,email4,Tele4,email5,Tele5,email6,Tele6,email7,Tele7,email8,Tele8) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",("",the_new_supp_name, new_emails_list[0],"",new_emails_list[1],"",new_emails_list[2],"",new_emails_list[3],"",new_emails_list[4],"",new_emails_list[5],"",new_emails_list[6],"",new_emails_list[7],"" ))
+          # cursor.execute("INSERT  INTO suppliers (Supplier,email1,email2,email3,email4,email5,email6,email7,email8) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",("",the_new_supp_name, new_emails_list[0],"",new_emails_list[1],"",new_emails_list[2],"",new_emails_list[3],"",new_emails_list[4],"",new_emails_list[5],"",new_emails_list[6],"",new_emails_list[7],"" ))
 
-          # cursor.execute(query,val)
+          cursor.execute(query,val)
           conn.commit()
           conn.close()
         

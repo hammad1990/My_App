@@ -21,6 +21,14 @@
                 <div class="suppliers_emails">
                 </div>
                 <div>
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    {% for message in messages %}
+                        <h2 style="color: rgb(236, 15, 89);font-size:15px;position: relative;left: 490px;top: 40px;">{{ message }}</h6>
+                    {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+
                     {% for row in range (0,new_emails_list|length)%}
                     <h2 class="h2_emails">
                         {{new_emails_list[row]}}
