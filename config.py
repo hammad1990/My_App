@@ -97,7 +97,7 @@ class Config:
     # fonts="C:/Users/Mohammed_Hammad/Documents/my python files/My_Apps/static/fonts/"
 
     #fonts in PETRA:
-    fonts="Z:/M.hammad/PY/My_App/static/fonts/"
+    fonts="Z:/M.hammad/PY/My_Apps/static/fonts/"
    
 
    
