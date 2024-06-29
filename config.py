@@ -94,10 +94,10 @@ class Config:
     RFQs="Z:/M.HAMMAD/RFQs/"
 
     #fonts in laptop:
-    fonts="C:/Users/Mohammed_Hammad/Documents/my python files/My_Apps/static/fonts/"
+    # fonts="C:/Users/Mohammed_Hammad/Documents/my python files/My_Apps/static/fonts/"
 
     #fonts in PETRA:
-    # fonts="???"
+    fonts="Z:/M.hammad/PY/My_apps-R1/My_App/static/fonts"
 
    
 
