@@ -45,6 +45,7 @@ def find_code_func():
       cursor=conn.cursor()
       epicor=request.form.get('epicor')
       search_words=request.form['find_code'] 
+      print(username)
       print(search_words)
       if epicor=="epicor":  ##### check if we search by epicor code
         query=("EXEC SSRS_ProcurmentPartSupplier ?,?,?,?,?")
