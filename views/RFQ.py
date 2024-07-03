@@ -222,7 +222,7 @@ def RFQ_func():
       # print(df)
       print(len(df))
       for i in range(0,len(No_of_items)):
-        # print(f"{df['Item'][i]}")
+        pdf.set_font('DejaVu', '', 8)
         pdf.cell(10, base_Line_height,txt=f"{df['Item'][i]}", ln = 0, align = 'C',border=0)
         pdf.cell(30, base_Line_height,txt = f"{df['Code'][i]}", ln = 0, align = 'C',border=0)
         y=pdf.get_y()
@@ -234,16 +234,18 @@ def RFQ_func():
         pdf.cell(18, base_Line_height,txt = f"{df['QTY'][i]}", ln = 0, align = 'C',border=0)
         pdf.cell(15, base_Line_height,txt = f"{df['UOM'][i]}", ln = 1, align = 'C',border=0)
         pdf.set_xy(x1,y1+1)
-        pdf.cell(0, 0,txt = '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------', ln = 1, align = 'L',border =0)
+        pdf.set_font('Arial', '', 12)
+        pdf.cell(0, 0,txt = '---------------------------------------------------------------------------------------------------------------------------------------', ln = 1, align = 'L',border =0)
 
     
       
       #  #### export pdf file
       pdf.output(Config.RFQs+f"RFQ#{inquiry_number}.pdf")
-      # pdf.output(Config.RFQs+"fsf")
+      
+      
  
     #### send the inquiry email
-      # mail_RFQ(emails1,Config.RFQs+f"RFQ#{inquiry_number}.pdf",inquiry_number)
+      mail_RFQ(emails1,Config.RFQs+f"RFQ#{inquiry_number}.pdf",inquiry_number)
       return render_template("RFQ.html",username=username,supplier=supplier,final_emails=final_emails)  
       
     
