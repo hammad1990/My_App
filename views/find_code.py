@@ -122,9 +122,9 @@ def find_code_func():
         df1 = pd.DataFrame(data)
         
         df1.to_excel(Config.Downloaded_excel+"search.xlsx") 
-        
-        return render_template("find_code.html",username=username,search_words=search_words,code=code,desc=desc,\
-                              lastpo=lastpo,supplierid=supplierid,supplier=supplier,podate=podate,cost=cost,currency=currency,uom=uom,origin=origin,onhand=onhand,demand=demand)
+
+        return send_file(Config.Downloaded_excel+"search.xlsx",as_attachment=True)
+       
         
         
 
