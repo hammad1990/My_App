@@ -121,11 +121,12 @@ def find_code_func():
         data={'code':code,'desc':desc,'demand':demand,'onhand':onhand,'uom':uom,'cost':cost,'currency':currency,'supplier':supplier,'suppliedid':supplierid,'origin':origin,'lastpo':lastpo}
         df1 = pd.DataFrame(data)
         
-        # df1.to_excel("Z:/M.hammad/find codes outputs/search.xlsx") 
+        df1.to_excel(Config.Downloaded_excel+"search.xlsx") 
         
-        # return send_file("Z:/M.hammad/find codes outputs/search.xlsx",as_attachment=True)
-        # here i will download it excel sheet without need to save it first(we need to test it ??)
-        return send_file(df1.to_excel("search.xlsx") ,as_attachment=True)
+        return render_template("find_code.html",username=username,search_words=search_words,code=code,desc=desc,\
+                              lastpo=lastpo,supplierid=supplierid,supplier=supplier,podate=podate,cost=cost,currency=currency,uom=uom,origin=origin,onhand=onhand,demand=demand)
+        
+        
 
   else:
 

@@ -98,6 +98,12 @@ class Config:
 
     #fonts in PETRA:
     fonts="Z:/M.hammad/PY/My_Apps/static/fonts/"
+
+    #downloaded Excel from searching codes in PETRA(find_code.py):
+    Downloaded_excel="C:/Users/m-hammad/Downloads/"
+
+    #downloaded Excel from searching codes in Laptop(find_code.py):
+    # Downloaded_excel="C:/Users/m-hammad/Downloads/"
    
 
    
