@@ -837,3 +837,38 @@ border-radius: 20px;
   left: 490px;
   top: 40px; 
 }
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+/* Edit supplier Modal---add_supplier.html */
+
+#myModal1{
+  position: absolute;
+  left: 550px;
+  top: 70px;
+  
+}
+#New_User1{
+  display: block;
+  height: 36px;
+  width: 164px;
+  position: relative;
+  left: 410px;
+  top: 40px;
+  background-color: red
+}
+
+.dropdown1 {
+  display: inline;
+  height: 36px;
+  width: 164px;
+  border-color: black;
+  border-width: 2px;
+  border-style:inherit
+}
+#suppliers1{
+  border-color: black;
+}
+
+#Rname1{
+  display: inline;
+}

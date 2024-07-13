@@ -19,11 +19,13 @@ def add_supplier_func():
     
     if "user"in session:
         username=session["user"]
-    if request.method=="POST":
+    # if request.method=="POST":
+    if  'Save' in request.form:
         add_count()
         new_emails_list=[""] * 8
         the_new_supp_name=request.form['add_new_supplier']##### the new supplier name
         x_list=request.form.getlist('emails_texts[]')### get all emails entered
+
         
 
 
@@ -56,6 +58,57 @@ def add_supplier_func():
           conn.close()
         
         return render_template("add_supplier.html",username=username,new_emails_list=new_emails_list,the_new_supp_name=the_new_supp_name)
-    else:
+    
+    elif  'Show' in request.form:
+      supplier=[]
+      conn = pyodbc.connect(Config.DATABASE_PARAMETER)
+      cursor=conn.cursor()
+      
+      query=f"SELECT Supplier FROM suppliers"
+      rows=cursor.execute(query)
+      rows=rows.fetchall()
+      # conn.commit()
+      # conn.close()
+      if rows:
         
-        return render_template("add_supplier.html",username=username)
+        for row in range (0,len(rows)):
+          
+          supplier.append(rows[row]) 
+
+        #convert list of tubles coming from SQL to list:
+        out = []
+        for t in supplier:
+          for item in t:
+            out.append(item)
+        
+        supplier=out
+        supplier_to_edit=request.form['suppliers1']
+        print(supplier_to_edit)
+        return render_template("add_supplier.html",username=username,supplier=supplier,supplier_to_edit=supplier_to_edit)
+
+    
+    else:
+        supplier=[]
+        conn = pyodbc.connect(Config.DATABASE_PARAMETER)
+        cursor=conn.cursor()
+        
+        query=f"SELECT Supplier FROM suppliers"
+        rows=cursor.execute(query)
+        rows=rows.fetchall()
+        # conn.commit()
+        # conn.close()
+        if rows:
+          
+          for row in range (0,len(rows)):
+            
+            supplier.append(rows[row]) 
+
+          #convert list of tubles coming from SQL to list:
+          out = []
+          for t in supplier:
+            for item in t:
+              out.append(item)
+          
+          supplier=out
+        
+        return render_template("add_supplier.html",username=username,supplier=supplier)

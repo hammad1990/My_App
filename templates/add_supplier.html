@@ -35,12 +35,57 @@
                     </h2>
                     {% endfor %}  
                 </div>
-                <div class="file" style="margin-top: 120px;margin-left: 480px" >
-                    <input   type="submit"  class="btn btn-primary hover-me " value="Save" style="margin-left: 20px" >
+                <div class="file" style="margin-top: 90px;margin-left: 480px" >
+                    <input   type="submit"  class="btn btn-primary hover-me " name="Save" value="Save" style="margin-left: 20px" >
                 </div>
                 
 
             </form>
+            <!-- Modal to edit supplier  -->
+
+
+            <form action="#" method="POST" >
+                <div style="margin-top: 40px; margin-left:80px">
+
+                    
+                    <button type="button" id="New_User1" class="btn btn-secondary" data-toggle="modal" data-target="#myModal1">Edit Supplier</button>
+                </div>
+                
+                <div id="myModal1" class="modal" role="dialog" >
+                  <div  class="modal-dialog modal-lg" >
+                    <div class="modal-content">
+                        <!-- ######### modal header -->
+                      <div class="modal-header">
+                        <span class="close1">&times;</span>
+                        <h5>Edit supplier Name/Emails</h5>
+                      </div>
+                      <!--modal body -->
+                    <div class="modal-body">
+                        <div id="f1">  
+                          <label for="Rname1" class="text7 " >Supplier Name:</label>
+                            <div class="dropdown1">
+                                <input list="suppliers2" name="suppliers1" id="suppliers1" placeholder="Search for supplier">
+                                <datalist id="suppliers2">
+                                    {% for s in supplier %}
+                                        <option value="{{s}}">
+                                    {% endfor %}
+                                </datalist>
+                            
+                            </div>
+                        </div> 
+                        <h3>{{supplier_to_edit}}</h3>
+                        
+                    </div>
+                      <!-- ##### modal footer  -->
+                      <div class="modal-footer">
+                        <div id="f4" >
+                          
+                          <input  type="submit"  class="btn btn-primary " value="Show" name="Show" id="Show1" >
+                        </div>
+                      </div>
+                </div>
+
+              </form>
         </div>
     </div> 
 
