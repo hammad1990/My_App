@@ -82,7 +82,6 @@ def RFQ_func():
     supplier=[]
     emails=[]
     emails1=[]
-    final_emails=[]
     conn = pyodbc.connect(Config.DATABASE_PARAMETER)
     cursor=conn.cursor()
     
@@ -139,16 +138,13 @@ def RFQ_func():
             
             emails.append(rows[row]) 
           emails = [item for t in emails for item in t]  #convert list of tubles coming from SQL to list
-          # print(emails)
-          # print(len(emails))
           for x in range(0,len(emails)):
             if emails[x]is None:
 
               pass
             else:
               emails1.append(emails[x])
-          # print(emails1)
-          # return render_template("RFQ.html",username=username,supplier=supplier,final_emails=final_emails) 
+
           
     
 
@@ -156,7 +152,7 @@ def RFQ_func():
 
             print("final email=0")
             flash('No emails found for this supplier, please update the database', "error")
-            return render_template("RFQ.html",username=username,supplier=supplier,final_emails=final_emails)  
+            return render_template("RFQ.html",username=username,supplier=supplier)  
           
         # print(emails1)
         emails1=[string.replace("'","") for string in emails1]
@@ -171,12 +167,9 @@ def RFQ_func():
       else:
           print("not excel")
           flash('the file selected is not Excel, please recheck', "error")
-          return render_template("RFQ.html",username=username,supplier=supplier,final_emails=final_emails) 
+          return render_template("RFQ.html",username=username,supplier=supplier) 
       
-      
-        
 
-        # 
 
         #create PDF object
  
@@ -246,7 +239,7 @@ def RFQ_func():
  
     #### send the inquiry email
       mail_RFQ(emails1,Config.RFQs+f"RFQ#{inquiry_number}.pdf",inquiry_number)
-      return render_template("RFQ.html",username=username,supplier=supplier,final_emails=final_emails)  
+      return render_template("RFQ.html",username=username,supplier=supplier)  
       
     
   else:

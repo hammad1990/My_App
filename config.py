@@ -52,7 +52,7 @@ class Config:
     # all_modes="C:/Users/Mohammed_Hammad/Documents/my python files/My_Apps/static/txt/modes/"
 
     #text modes in PETRA(sequence.py):
-    all_modes="Z:/M.HAMMAD/PY/My_Apps/static/txt/modes"
+    all_modes="Z:/M.HAMMAD/PY/My_Apps/static/txt/modes/"
 
      #text options in laptop(sequence.py):
     # all_options="C:/Users/Mohammed_Hammad/Documents/my python files/My_Apps/static/txt/options/"
