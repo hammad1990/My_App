@@ -59,8 +59,10 @@ def add_supplier_func():
         
         return render_template("add_supplier.html",username=username,new_emails_list=new_emails_list,the_new_supp_name=the_new_supp_name)
     
-    elif  'Show' in request.form:
+    elif  'Show' in request.form or 'Update' in request.form:
       supplier=[]
+      emails=[]
+      emails1=[]
       conn = pyodbc.connect(Config.DATABASE_PARAMETER)
       cursor=conn.cursor()
       
@@ -84,9 +86,41 @@ def add_supplier_func():
         supplier=out
         supplier_to_edit=request.form['suppliers1']
         print(supplier_to_edit)
-        return render_template("add_supplier.html",username=username,supplier=supplier,supplier_to_edit=supplier_to_edit)
+        # get supplier email if exist
+        query1=f"SELECT email1,email2,email3,email4,email5,email6,email7,email8 FROM suppliers WHERE Supplier='{supplier_to_edit}'"
+        rows1=cursor.execute(query1)
+        rows1=rows1.fetchall()
+        print(rows1)
+        conn.commit()
+        conn.close()
+        if rows1:
+          for row in range (0,len(rows1)):
+            emails.append(rows1[row]) 
+          emails = [item for t in emails for item in t]  #convert list of tubles coming from SQL to list
+          # print(emails)
+          # print(len(emails))
+          for x in range(0,len(emails)):
+            if emails[x]is None:
+              pass
+            else:
+              emails1.append(emails[x])
+          if len(emails1)==0:
+            print("final email=0")
+            flash('No emails found for this supplier, please update the database', "error")
+            return render_template("add_supplier.html",username=username,supplier=supplier,supplier_to_edit=supplier_to_edit)  
+          
+        # print(emails1)
+        emails1=[string.replace("'","") for string in emails1]
+        # print(emails1)
+        emails1=[string.strip() for string in emails1]
+        # print(emails1)
+        return render_template("add_supplier.html",username=username,supplier=supplier,supplier_to_edit=supplier_to_edit,emails1=emails1)
 
-    
+    elif  'Update' in request.form:
+        conn = pyodbc.connect(Config.DATABASE_PARAMETER)
+        cursor=conn.cursor()
+        query=f"Update Supplier FROM suppliers"
+
     else:
         supplier=[]
         conn = pyodbc.connect(Config.DATABASE_PARAMETER)

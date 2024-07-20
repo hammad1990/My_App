@@ -978,35 +978,10 @@ $(add_emails_btn).click(function(e){ //on add input button click
     return false
     });
   //////////////////////////////////
-// Modal to edit supplier
-  window.onload = function(){
-    var modal1 = document.getElementById("myModal1");
-    var btn2 = document.getElementById("New_User1");
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close1")[0];
-    btn2.onclick = function() {
-      
-      console.log("fsdfsdf")
-      modal1.style.display = "block";
-      
-    }
-  
-  
-  
-    span.onclick = function() {
-      modal1.style.display = "none";
-    }
-  
-    document.getElementById("close-button1").addEventListener('click',function(e){
-      modal1.style.display = "none";
-    })
-  
-  
-  }
 
- 
-
-
-// ###################### END  ##########
-
+  $("#Show").click(function(e){
+    $("#Update").show();
+    // $('#Update').css('display','inline');
+    // document.getElementById('#Update').style.visibility = 'visible';
+  });
 

@@ -813,14 +813,27 @@ border-radius: 20px;
   width: fit-content;
 }
 
-/* add/edit supplier */
+/* add_supplier.html ********************/
 
 
 
 .add_new_supplier_name  {
   display: block;
   position: relative;
-  left: 490px;
+  left: 200px;
+  top: 20px;
+  
+}
+#add_new_supplier{
+  position: relative;
+  left: 200px;
+  top: 20px;
+  width: 300px;
+  
+}
+#add_emails_btn{
+  position: relative;
+  left: 200px;
   top: 20px;
 }
 .suppliers_emails{
@@ -838,37 +851,43 @@ border-radius: 20px;
   top: 40px; 
 }
 
-/* ------------------------------------------------------------------------------------------------------------------------- */
-/* Edit supplier Modal---add_supplier.html */
-
-#myModal1{
-  position: absolute;
-  left: 550px;
-  top: 70px;
-  
-}
-#New_User1{
-  display: block;
-  height: 36px;
-  width: 164px;
-  position: relative;
-  left: 410px;
-  top: 40px;
-  background-color: red
-}
 
 .dropdown1 {
   display: inline;
   height: 36px;
-  width: 164px;
+  width: 450px;
   border-color: black;
   border-width: 2px;
   border-style:inherit
 }
 #suppliers1{
   border-color: black;
+  width: 350px;
 }
 
 #Rname1{
   display: inline;
+  margin-left: 100px;
+}
+
+
+
+hr.dashed {
+  border-top: 3px dashed yellow ;
+}
+
+#f1{
+  margin-left: 300px;
+  margin-top: 50px;
+}
+#Show{
+  margin-left: 420px;
+  margin-top: 20px;
+  display: inline;
+}
+#Update{
+  margin-left: 10px;
+  margin-top: 20px;
+  display: none;
+
 }

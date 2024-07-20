@@ -8,7 +8,7 @@
     <div class="row" >
         <div class="col-lg-12  col-xs-12">
             
-            <h1 class="text" style="margin-top: 50px;">Add/Edit Supplier Emails</h1>
+            <h1 class="text" style="margin-top: 50px;">Add new Supplier Emails</h1>
             <form  action="/add_supplier" method="POST" enctype="multipart/form-data"  >  <!--post means to post to server-->
 
                 
@@ -41,27 +41,14 @@
                 
 
             </form>
-            <!-- Modal to edit supplier  -->
+            <!--  edit supplier  -->
 
-
-            <form action="#" method="POST" >
-                <div style="margin-top: 40px; margin-left:80px">
-
-                    
-                    <button type="button" id="New_User1" class="btn btn-secondary" data-toggle="modal" data-target="#myModal1">Edit Supplier</button>
-                </div>
+            <hr class="dashed">
+            <h1 style="margin-left: 410px; color: aliceblue;"> Or Edit current supplier </h1>
+            <form  action="/add_supplier" method="POST" enctype="multipart/form-data"  >  <!--post means to post to server-->
                 
-                <div id="myModal1" class="modal" role="dialog" >
-                  <div  class="modal-dialog modal-lg" >
-                    <div class="modal-content">
-                        <!-- ######### modal header -->
-                      <div class="modal-header">
-                        <span class="close1">&times;</span>
-                        <h5>Edit supplier Name/Emails</h5>
-                      </div>
-                      <!--modal body -->
-                    <div class="modal-body">
-                        <div id="f1">  
+
+                    <div id="f1">  
                           <label for="Rname1" class="text7 " >Supplier Name:</label>
                             <div class="dropdown1">
                                 <input list="suppliers2" name="suppliers1" id="suppliers1" placeholder="Search for supplier">
@@ -72,20 +59,36 @@
                                 </datalist>
                             
                             </div>
-                        </div> 
-                        <h3>{{supplier_to_edit}}</h3>
-                        
                     </div>
-                      <!-- ##### modal footer  -->
-                      <div class="modal-footer">
-                        <div id="f4" >
-                          
-                          <input  type="submit"  class="btn btn-primary " value="Show" name="Show" id="Show1" >
-                        </div>
-                      </div>
-                </div>
+             
+                    <input style="color: rgb(85, 35, 204); border: none; width: 350px;margin-left: 425px;margin-top: 10px" type="text" value="{{supplier_to_edit}}">
+                    <div style="color: red;font-size:15px;display:block">
+                        {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                        {% for message in messages %}
+                        <h6 style="color: red;font-size:15px;display:block">{{ message }}</h6>
+                        {% endfor %}
+                        {% endif %}
+                        {% endwith %}
 
-              </form>
+                        {% for message in emails1 %}
+                        <input type="text" style="color: red;font-size:15px;display:block;width: 350px;border-style: double; margin-left: 425px;" value={{message}}>
+                        
+                        {% endfor %}
+
+                        <input type="submit" value="Show" name="Show" id="Show" class="btn btn-primary ">
+                        <input type="submit" value="Update" name="Update" id="Update" class="btn btn-primary "  >
+                    </div>
+                        
+                  
+                
+                        
+                        
+                        
+    
+                      
+            </form>
+            
         </div>
     </div> 
 
