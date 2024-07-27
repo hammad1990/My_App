@@ -880,14 +880,11 @@ hr.dashed {
   margin-left: 300px;
   margin-top: 50px;
 }
-#Show{
-  margin-left: 420px;
+
+#Delete{
+  margin-left: 492px;
   margin-top: 20px;
   display: inline;
-}
-#Update{
-  margin-left: 10px;
-  margin-top: 20px;
-  display: none;
+  background-color: red;
 
 }

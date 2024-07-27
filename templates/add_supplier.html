@@ -41,10 +41,10 @@
                 
 
             </form>
-            <!--  edit supplier  -->
+            <!--  delete supplier  -->
 
             <hr class="dashed">
-            <h1 style="margin-left: 410px; color: aliceblue;"> Or Edit current supplier </h1>
+            <h1 style="margin-left: 410px; color: aliceblue;"> Or Delete supplier </h1>
             <form  action="/add_supplier" method="POST" enctype="multipart/form-data"  >  <!--post means to post to server-->
                 
 
@@ -61,32 +61,18 @@
                             </div>
                     </div>
              
-                    <input style="color: rgb(85, 35, 204); border: none; width: 350px;margin-left: 425px;margin-top: 10px" type="text" value="{{supplier_to_edit}}">
+                    
                     <div style="color: red;font-size:15px;display:block">
                         {% with messages = get_flashed_messages() %}
                         {% if messages %}
                         {% for message in messages %}
-                        <h6 style="color: red;font-size:15px;display:block">{{ message }}</h6>
+                        <h6 style="color: yellow;font-size:15px;display:block;margin-left: 430px;">{{ message }}</h6>
                         {% endfor %}
                         {% endif %}
                         {% endwith %}
-
-                        {% for message in emails1 %}
-                        <input type="text" style="color: red;font-size:15px;display:block;width: 350px;border-style: double; margin-left: 425px;" value={{message}}>
+                        <input type="submit" value="Delete" name="Delete" id="Delete" class="btn btn-secondary ">
                         
-                        {% endfor %}
-
-                        <input type="submit" value="Show" name="Show" id="Show" class="btn btn-primary ">
-                        <input type="submit" value="Update" name="Update" id="Update" class="btn btn-primary "  >
-                    </div>
-                        
-                  
-                
-                        
-                        
-                        
-    
-                      
+                    </div>     
             </form>
             
         </div>

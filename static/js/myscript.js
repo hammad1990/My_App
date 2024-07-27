@@ -979,9 +979,5 @@ $(add_emails_btn).click(function(e){ //on add input button click
     });
   //////////////////////////////////
 
-  $("#Show").click(function(e){
-    $("#Update").show();
-    // $('#Update').css('display','inline');
-    // document.getElementById('#Update').style.visibility = 'visible';
-  });
+  
 
