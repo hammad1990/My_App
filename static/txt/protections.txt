@@ -1,4 +1,4 @@
 1-High and low pressure switches: these switches give protection for the compressors from low suction
 pressure or high discharge pressure.
 2-Internal thermal protection for the motors (TMP).
-3-Circuit breaker for all compressors.
+3-Circuit breaker and External overload or (MMS) for all Compressors.
