@@ -19,8 +19,10 @@ class mail_RFQ:
         mailItem.To=";".join([i for i in self.emails1 if isinstance(self.emails1, list) == True])
         mailItem.CC="m-hammad@petra-eng.com.jo;procurementm@petra-eng.com.jo;m-harfeel@petra-eng.com.jo;B-ali@petra-eng.com.jo;k-ganim@petra-eng.com.jo;s-alwhiedi@petra-eng.com.jo;s-eid@petra-eng.com.jo"
         mailItem.BodyFormat=2
-        mailItem.HTMLBody=f"""<p style="margin-top: 5px;">Dear Madam/Sir</p
+        mailItem.HTMLBody=f"""<p style="margin-top: 5px;">Dear Madam/Sir</p>
             <p>You are kindly requested to send us your best price and delivery date for attached.</p><br>
+            <p>Best Regards</p>
+            <p>Procurement Department</p>
                                   """
   
         mailItem.Attachments.Add(self.path)

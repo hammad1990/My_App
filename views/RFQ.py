@@ -72,7 +72,7 @@ def RFQ_func():
   
   if request.method=="POST":
 
-    
+    add_count()
     No_of_items=[]
     petra_codes=[]
     desc=[]
