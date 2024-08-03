@@ -114,18 +114,10 @@ def RFQ_func():
     else:
       if  inquiry.filename.endswith('xlsx') or inquiry.filename.endswith('xls'):
         print("yes, it ends with xlxs or xls")
-        inquiry_number=read_inquiry(full_file_path).inquiry_number
-        No_of_items=read_inquiry(full_file_path).No_of_items
-        petra_codes=read_inquiry(full_file_path).petra_codes
-        desc=read_inquiry(full_file_path).desc
-        qty=read_inquiry(full_file_path).qty
-        unit=read_inquiry(full_file_path).unit
+        xx=read_inquiry(full_file_path)
         suppliers1=request.form['suppliers1'] 
        
-        print(inquiry_number)
-        
-        
-
+        # print(type(xx.inquiry_number))
 
         # get supplier email if exist
         query=f"SELECT email1,email2,email3,email4,email5,email6,email7,email8 FROM suppliers WHERE Supplier='{suppliers1}'"
@@ -145,25 +137,16 @@ def RFQ_func():
             else:
               emails1.append(emails[x])
 
-          
-    
-
           if len(emails1)==0:
 
             print("final email=0")
             flash('No emails found for this supplier, please update the database', "error")
             return render_template("RFQ.html",username=username,supplier=supplier)  
-          
-        # print(emails1)
-        emails1=[string.replace("'","") for string in emails1]
-        # print(emails1)
-        emails1=[string.strip() for string in emails1]
-        # print(emails1)
 
-        
-      
-            
-      
+        emails1=[string.replace("'","") for string in emails1]
+        emails1=[string.strip() for string in emails1]
+
+
       else:
           print("not excel")
           flash('the file selected is not Excel, please recheck', "error")
@@ -173,7 +156,7 @@ def RFQ_func():
 
         #create PDF object
  
-      pdf=PDF(inquiry_number,No_of_items,petra_codes,desc,qty,unit,suppliers1)
+      pdf=PDF(xx.inquiry_number,xx.No_of_items,xx.petra_codes,xx.desc,xx.qty,xx.unit,suppliers1)
       pdf.alias_nb_pages()
       #set auto page break
       pdf.set_auto_page_break(auto=True,margin=3)
@@ -211,10 +194,9 @@ def RFQ_func():
       base_Line_height=10
       
     
-      df = pd.DataFrame({'Item':No_of_items,'Code': petra_codes,'Description':desc,'QTY':qty,'UOM':unit})
-      # print(df)
+      df = pd.DataFrame({'Item':xx.No_of_items,'Code': xx.petra_codes,'Description':xx.desc,'QTY':xx.qty,'UOM':xx.unit})
       print(len(df))
-      for i in range(0,len(No_of_items)):
+      for i in range(0,len(xx.No_of_items)):
         pdf.set_font('DejaVu', '', 8)
         pdf.cell(10, base_Line_height,txt=f"{df['Item'][i]}", ln = 0, align = 'C',border=0)
         pdf.cell(30, base_Line_height,txt = f"{df['Code'][i]}", ln = 0, align = 'C',border=0)
@@ -233,12 +215,12 @@ def RFQ_func():
     
       
       #  #### export pdf file
-      pdf.output(Config.RFQs+f"RFQ#{inquiry_number}.pdf")
+      pdf.output(Config.RFQs+f"RFQ#{xx.inquiry_number}.pdf")
       
       
  
     #### send the inquiry email
-      mail_RFQ(emails1,Config.RFQs+f"RFQ#{inquiry_number}.pdf",inquiry_number)
+      mail_RFQ(emails1,Config.RFQs+f"RFQ#{xx.inquiry_number}.pdf",xx.inquiry_number)
       return render_template("RFQ.html",username=username,supplier=supplier)  
       
     
