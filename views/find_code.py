@@ -22,6 +22,7 @@ def find_code_func():
   origin=[]
   lastpo=[]
   podate=[]
+  QTY=[]
 
 
   
@@ -100,9 +101,11 @@ def find_code_func():
                 cost.append(float(rows[row][6]))
                 currency.append(rows[row][7])
                 uom.append(rows[row][8])
-                origin.append(rows[row][9])
-                onhand.append(float(rows[row][10]))
-                demand.append(float(rows[row][11]))
+                origin.append(rows[row][10])
+                onhand.append(float(rows[row][11]))
+                demand.append(float(rows[row][12]))
+                QTY.append(float(rows[row][9]))
+            
       else:
         flash('no results', "error")
 
@@ -113,12 +116,12 @@ def find_code_func():
     if "Search_code" in request.form:
       
         return render_template("find_code.html",username=username,search_words=search_words,code=code,desc=desc,\
-                              lastpo=lastpo,supplierid=supplierid,supplier=supplier,podate=podate,cost=cost,currency=currency,uom=uom,origin=origin,onhand=onhand,demand=demand)
+                              lastpo=lastpo,supplierid=supplierid,supplier=supplier,podate=podate,cost=cost,currency=currency,uom=uom,origin=origin,onhand=onhand,demand=demand,QTY=QTY)
       
     elif "open_it_as_excel" in request.form:
         add_count()
         print("exceeelllll")
-        data={'code':code,'desc':desc,'demand':demand,'onhand':onhand,'uom':uom,'cost':cost,'currency':currency,'supplier':supplier,'suppliedid':supplierid,'origin':origin,'lastpo':lastpo}
+        data={'code':code,'desc':desc,'demand':demand,'onhand':onhand,'uom':uom,'cost':cost,'currency':currency,'supplier':supplier,'suppliedid':supplierid,'origin':origin,'lastpo':lastpo,'QTY':QTY}
         df1 = pd.DataFrame(data)
         
         df1.to_excel(Config.Downloaded_excel+"search.xlsx") 

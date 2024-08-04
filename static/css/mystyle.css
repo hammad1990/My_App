@@ -718,7 +718,7 @@ padding: 3px;
   
 }
 .find_code_table thead tr #tb8 {
-  width: 10%;
+  width: 5%;
   border-width: 0.5px;
   
 }
@@ -728,12 +728,18 @@ padding: 3px;
   
 }
 .find_code_table thead tr #tb10 {
-  width: 5%;
+  width: 4%;
   border-width: 0.5px;
   
 }
 .find_code_table thead tr #tb11 {
-  width: 4%;
+  width: 3%;
+  border-width: 0.5px;
+  
+}
+
+.find_code_table thead tr #tb12 {
+  width: 2%;
   border-width: 0.5px;
   
 }
