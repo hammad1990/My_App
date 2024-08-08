@@ -59,7 +59,7 @@ def login_func():
             # return redirect(url_for("home.home_func"))
        
         else:
-            print("not ok")
+            print("Incorrect email or password")
             flash('Incorrect email or password',"error")
             return render_template("login.html")
     elif  'Register' in request.form:
