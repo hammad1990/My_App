@@ -23,7 +23,7 @@ class mail_heater:
       self.stage=stage
       self.totalkw=totalkw
       mailItem.HTMLBody=f"""<h2 style="margin-top: 5px;color: red;">Dear {self.username}</h2>
-        <p>you asked for heaters :{self.heatercap}<br>
+        <p>you askedd for heaters :{self.heatercap}<br>
         volt={self.volt}<br>
         stages={self.stage}<br>
         </p>
