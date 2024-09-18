@@ -17,7 +17,7 @@ class mail_RFQ:
         mailItem.Subject=f"Inquiry No. {self.inquiry_number}"
         # mailItem.Recipients.Add(''.join(self.emails1))-----------this methid is not correct
         mailItem.To=";".join([i for i in self.emails1 if isinstance(self.emails1, list) == True])
-        mailItem.CC="m-hammad@petra-eng.com.jo;procurementm@petra-eng.com.jo;m-harfeel@petra-eng.com.jo;B-ali@petra-eng.com.jo;k-ganim@petra-eng.com.jo;s-alwhiedi@petra-eng.com.jo;s-eid@petra-eng.com.jo;m-alnobani@petra-eng.com.jo"
+        mailItem.CC="m-alnobani@petra-eng.com.jo;m-hammad@petra-eng.com.jo;procurementm@petra-eng.com.jo;m-harfeel@petra-eng.com.jo;B-ali@petra-eng.com.jo;k-ganim@petra-eng.com.jo;s-alwhiedi@petra-eng.com.jo;s-eid@petra-eng.com.jo"
         # mailItem.CC="m-hammad@petra-eng.com.jo"
         mailItem.BodyFormat=2
         mailItem.HTMLBody=f"""<p style="margin-top: 5px;">Dear Madam/Sir</p>
