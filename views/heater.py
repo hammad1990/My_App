@@ -14,7 +14,7 @@ from models.add_count import add_count
 
 
 
-heater=Blueprint("heater",__name__)
+heater=Blueprint("heater",__name__,template_folder='templates',static_folder='static')
 @heater.route("/heater",methods=["GET","POST"])  #post means to post to server, get means to get from server.
 def selection():
   

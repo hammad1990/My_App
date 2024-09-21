@@ -33,4 +33,4 @@ app.register_blueprint(add_supplier)
 
 
 if __name__=="__main__":
-    app.run(debug=app.config['DEBUG'],host='0.0.0.0',port=app.config['PORT'])
+    app.run(debug=app.config['DEBUG'],host='0.0.0.0',port=app.config['PORT'],threaded=True)

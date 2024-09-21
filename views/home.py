@@ -4,7 +4,7 @@ from config import Config
 
 home=Blueprint("home",__name__,template_folder='templates',static_folder='static')
 
-@home.route("/home") 
+@home.route("/home",methods=["GET","POST"]) 
 def home_func():
     all_users=[]
     all_counts=[]
