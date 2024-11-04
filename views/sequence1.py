@@ -53,7 +53,9 @@ def sequence_func1():
 
 @sequence1.route("/sequence1/<pname>",methods=["GET","POST"])#post means to post to server, get means to get from server.
 def sequence_func11(pname):
-  open_soo(pname)
+  if "user"in session:
+      username=session["user"]
+  open_soo(pname,username)
 
   # return render_template("sequence1.html")
   return redirect(url_for("sequence1.sequence_func1"))
