@@ -4,9 +4,10 @@ import base64
 from config import Config
 
 class open_soo:
-    def __init__(self,existing_project):
+    def __init__(self,existing_project,username):
       self.SOO=[]
       self.existing_project=existing_project
+      self.username=username
       self.get_soo_from_sql()
 
     def get_soo_from_sql(self):
@@ -21,6 +22,7 @@ class open_soo:
       rows=cursor.execute(query)
       rows=rows.fetchall()
       if rows:
+        print(self.username)
         print("soo exist in SQL")
         for row in rows:
           self.SOO=rows[0][4]
