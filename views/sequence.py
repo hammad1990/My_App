@@ -122,7 +122,7 @@ def sequence_func():
       return render_template("sequence.html",username=username) 
     else:
       flash('SOO not exist', "error")
-      print("noooooooooo")
+      print("noooooooooo",username)
 
 
     
