@@ -117,7 +117,7 @@ def sequence_func():
   # print(protections)
   # print(options)
     
-    if open_soo1(Project_Name,rev,username).x== 5:
+    if open_soo1(Project_Name,rev).x== 5:
       flash('SOO with same name & Rev No. is already exist', "error")
       print("yesssssssssss")
       return render_template("sequence.html",username=username) 

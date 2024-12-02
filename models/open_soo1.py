@@ -1,20 +1,23 @@
 import pyodbc
 from config import Config
+from flask import session
 
 class open_soo1:
-    def __init__(self,project_name,rev,username):
+    def __init__(self,project_name,rev):
       self.SOO=[]
       self.rev=[]
       
       self.project_name=project_name
       self.rev=rev
-      self.username=username
+      
       self.x=0
-      print(self.username)
+      
       self.get_soo_from_sql1()
 
     def get_soo_from_sql1(self):
-      # print("htht")
+      if "user"in session:
+        username=session["user"]
+        print(username)
 
       conn = pyodbc.connect(Config.DATABASE_PARAMETER)
 
