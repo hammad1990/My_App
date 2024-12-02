@@ -2,13 +2,15 @@ import pyodbc
 from config import Config
 
 class open_soo1:
-    def __init__(self,project_name,rev):
+    def __init__(self,project_name,rev,username):
       self.SOO=[]
       self.rev=[]
       
       self.project_name=project_name
       self.rev=rev
+      self.username=username
       self.x=0
+      print(self.username)
       self.get_soo_from_sql1()
 
     def get_soo_from_sql1(self):
@@ -22,7 +24,8 @@ class open_soo1:
       rows=cursor.execute(query)
       rows=rows.fetchall()
       if rows:
-        print("soo exist in SQL2121")
+        
+        print("soo exist in SQL")
         for row in rows:
           
           self.SOO=rows[0][3]
