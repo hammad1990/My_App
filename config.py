@@ -1,5 +1,5 @@
 import os
-DEBUG=False
+DEBUG=True
 SECRET_KEY='111'  # this is used for flash messages
 PORT=5000
 class Config:
@@ -19,7 +19,8 @@ class Config:
     # chrome_path="C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
 
     #GOOGLE CHROME PATH IN PETRA(open_soo.py):
-    chrome_path="C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+    # chrome_path="C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+    Edge_path="C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
 
     #all_images IMAGE IN my laptop(sequence.py):
     # all_images="C:/Users/Mohammed_Hammad/Documents/my python files/My_Apps/static/imgs/"

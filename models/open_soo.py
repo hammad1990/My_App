@@ -2,6 +2,7 @@ import pyodbc
 import webbrowser
 import base64
 from config import Config
+import threading
 
 class open_soo:
     def __init__(self,existing_project,username):
@@ -35,11 +36,13 @@ class open_soo:
         ## now we create new PDF and write the SOO that we got from SQL inside it
         with open(Config.SOO_OUTPUT+f"{self.existing_project}.pdf", 'wb') as outfile:
           outfile.write(dencoded_string)
-        chrome_path=Config.chrome_path
-        webbrowser.register('chrome', None,webbrowser.BackgroundBrowser(chrome_path))   
-        browser='chrome'
+        Edge_path=Config.Edge_path
+        webbrowser.register('edge', None,webbrowser.BackgroundBrowser(Edge_path))   
+        browser='edge'
 
-        #### open new chrome tab
-        webbrowser.get(browser).open_new_tab(Config.SOO_OUTPUT+f"{self.existing_project}.pdf")
+        #### open new edge tab
+        # webbrowser.get(browser).open_new_tab(Config.SOO_OUTPUT+f"{self.existing_project}.pdf")
+        threading.Timer(5,webbrowser).start()
+        webbrowser.get(browser).open_new(Config.SOO_OUTPUT+f"{self.existing_project}.pdf")
           
     
