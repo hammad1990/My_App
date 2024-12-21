@@ -1,6 +1,5 @@
 from flask import Blueprint,render_template,request,send_file,session,redirect,url_for,flash
 from numpy import concatenate
-from datetime import datetime,date,timedelta,time
 from models.add_count import add_count
 import pyodbc
 import pandas as pd
@@ -16,8 +15,7 @@ def __init__(self):
 @add_supplier.route("/add_supplier",methods=["GET","POST"])#post means to post to server, get means to get from server.
 def add_supplier_func():
     supplier=[]
-    emails=[]
-    emails1=[]
+
 
     
     if "user"in session:

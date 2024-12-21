@@ -1,17 +1,8 @@
-from ast import Mod
-import math
 from flask import Blueprint,render_template,request,send_file,session,redirect,url_for
 from numpy import concatenate
 from fpdf import FPDF
-import webbrowser
-import codecs
-from datetime import datetime,date,timedelta,time
-from models.add_count import add_count
-from models.mail_SOO import mail_SOO
-from models.save_soo import save_soo
 from models.open_soo import open_soo
 import pyodbc
-import base64
 from config import Config
 
 sequence1=Blueprint("sequence1",__name__,template_folder='templates',static_folder='static')
