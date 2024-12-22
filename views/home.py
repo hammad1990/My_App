@@ -8,6 +8,7 @@ home=Blueprint("home",__name__,template_folder='templates',static_folder='static
 def home_func():
     all_users=[]
     all_counts=[]
+    print("home page")
     if "user"in session:
         username=session["user"]
         section=session["section"]

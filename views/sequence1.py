@@ -22,25 +22,26 @@ def sequence_func1():
    
   else:
     
-    conn = pyodbc.connect(Config.DATABASE_PARAMETER)
+  #   conn = pyodbc.connect(Config.DATABASE_PARAMETER)
 
-    cursor=conn.cursor()
+  #   cursor=conn.cursor()
     
-    query=f"SELECT * FROM SOO"
-    rows=cursor.execute(query)
-    rows=rows.fetchall()
-    conn.commit()
-    conn.close()
-    if rows:
-      for row in range (0,len(rows)):
+  #   query=f"SELECT * FROM SOO"
+  #   rows=cursor.execute(query)
+  #   rows=rows.fetchall()
+  #   conn.commit()
+  #   conn.close()
+  #   if rows:
+  #     for row in range (0,len(rows)):
         
-        UserNames.append(rows[row][1]) 
-        Countries.append(rows[row][2]) 
-        Pnames.append(rows[row][3]) 
-        Revisions.append(rows[row][5]) 
+  #       UserNames.append(rows[row][1]) 
+  #       Countries.append(rows[row][2]) 
+  #       Pnames.append(rows[row][3]) 
+  #       Revisions.append(rows[row][5]) 
       
-      # print(Countries)
-    return render_template("sequence1.html",username=username,UserNames=UserNames,Pnames=Pnames,Countries=Countries,Revisions=Revisions)
+  #     # print(Countries)
+  #   return render_template("sequence1.html",username=username,UserNames=UserNames,Pnames=Pnames,Countries=Countries,Revisions=Revisions)
+    return render_template("sequence1.html")
 
 @sequence1.route("/sequence1/<pname>",methods=["GET","POST"])#post means to post to server, get means to get from server.
 def sequence_func11(pname):

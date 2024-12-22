@@ -16,7 +16,7 @@ login=Blueprint("login",__name__,template_folder='templates',static_folder='stat
 def login_func():
     current_date1 = datetime.today().date()
     session["current_date1"]=current_date1
-    # print("current_date=" ,session["current_date1"])
+    print("log in page")
     if  'Login' in request.form:
         
         session["count-day"]=0
@@ -45,7 +45,7 @@ def login_func():
             email=rows[0][2]          # get the email
             section=rows[0][5]          # get the section
 
-            print(section)
+            print(username)
             # session = {'counter':0}
             session["id"]=id
             session["user"]=username
