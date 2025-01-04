@@ -1,4 +1,0 @@
-In this mode heaters are started to heat up th space to the required setpoint (Heating setpoint).
-Heating mode is enabled if heat/cool switch closed (provided by other) .Controller
-will start the supply fan motor then start the electric heaters stages gradually to achieve the set point.
-Heaters are protected by thermal cutouts which will stop them if heaters surface temperature raised above specific limit.
