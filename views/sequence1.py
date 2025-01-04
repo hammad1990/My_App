@@ -12,6 +12,7 @@ def sequence_func1():
   Countries=[]
   UserNames=[]
   Revisions=[]
+  print("sequence1  page")
   if "user"in session:
       username=session["user"]
   
@@ -19,9 +20,7 @@ def sequence_func1():
     # print("ffffffffffffff")
     return redirect (url_for('sequence.sequence_func'))
   
-   
-  else:
-    
+  # if  'Search_Project' in request.form: 
   #   conn = pyodbc.connect(Config.DATABASE_PARAMETER)
 
   #   cursor=conn.cursor()
@@ -41,6 +40,9 @@ def sequence_func1():
       
   #     # print(Countries)
   #   return render_template("sequence1.html",username=username,UserNames=UserNames,Pnames=Pnames,Countries=Countries,Revisions=Revisions)
+  else:
+    
+    
     return render_template("sequence1.html")
 
 @sequence1.route("/sequence1/<pname>",methods=["GET","POST"])#post means to post to server, get means to get from server.

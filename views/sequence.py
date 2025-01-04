@@ -62,6 +62,7 @@ class PDF(FPDF):
 
 def sequence_func():
   SOO=[]
+  print("sequence  page")
   
  
 

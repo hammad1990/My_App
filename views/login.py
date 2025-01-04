@@ -16,21 +16,21 @@ login=Blueprint("login",__name__,template_folder='templates',static_folder='stat
 def login_func():
     current_date1 = datetime.today().date()
     session["current_date1"]=current_date1
-    print("log in page")
+    # print("log in page")
     if  'Login' in request.form:
-        
+        # print("log in page1")
         session["count-day"]=0
         session["count-week"]=0
         Lm= request.form['Lemail']
         Lp= request.form['Lpassword']
         
         conn = pyodbc.connect(Config.DATABASE_PARAMETER)
-
+        print("log in page2")
 
        
 
         cursor=conn.cursor()
-       
+        # print("log in page3")
         query=f"SELECT * FROM users1 where email='{Lm}' AND password='{Lp}'"
         rows=cursor.execute(query)
         rows=rows.fetchall()

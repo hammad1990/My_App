@@ -7,13 +7,10 @@
     <div style="position:fixed; left:1750px; top:28px;margin-top:18px"><h5 style="color: red;">welcome {{username}}</h5></div>
     <div class="row" >
         <div class="col-lg-12  col-xs-12">
-            
+            <!--  add supplier  -->
             <h1 class="text" style="margin-top: 50px;">Add new Supplier Emails</h1>
             <form  action="/add_supplier" method="POST" enctype="multipart/form-data"  >  <!--post means to post to server-->
 
-                
-                
-             
                 <div class="add_new_supplier_name"> 
                     <input type="text"   id="add_new_supplier"  name="add_new_supplier" placeholder="write supplier name"  required autofocus value="{{the_new_supp_name}}">  
                     <button type="button" class="add_emails_btn"  id="add_emails_btn" name="Add_emails"><i class="fa-regular fa-square-plus"></i>Add Emails</button>
@@ -41,6 +38,8 @@
                 
 
             </form>
+
+
             <!--  delete supplier  -->
 
             <hr class="dashed">
@@ -57,6 +56,8 @@
                                         <option value="{{s}}">
                                     {% endfor %}
                                 </datalist>
+
+                               
                             
                             </div>
                     </div>
@@ -74,7 +75,7 @@
                         
                     </div>     
             </form>
-            
+  
         </div>
     </div> 
 

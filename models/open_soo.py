@@ -42,7 +42,7 @@ class open_soo:
 
         #### open new edge tab
         # webbrowser.get(browser).open_new_tab(Config.SOO_OUTPUT+f"{self.existing_project}.pdf")
-        threading.Timer(5,webbrowser).start()
+        # threading.Timer(5,webbrowser).start()
         webbrowser.get(browser).open_new(Config.SOO_OUTPUT+f"{self.existing_project}.pdf")
           
     

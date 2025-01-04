@@ -73,6 +73,7 @@ def add_supplier_func():
       conn.commit()
       conn.close()
       flash("Supplier deleted...")
+      
      
 
         
@@ -83,7 +84,7 @@ def add_supplier_func():
    
   
 
-    else:
+    elif request.method=="GET":
         supplier=[]
         conn = pyodbc.connect(Config.DATABASE_PARAMETER)
         cursor=conn.cursor()
@@ -106,5 +107,7 @@ def add_supplier_func():
               out.append(item)
           
           supplier=out
+          # print (type(supplier))
+          print(supplier[5])
         
         return render_template("add_supplier.html",username=username,supplier=supplier)

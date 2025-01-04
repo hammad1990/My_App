@@ -1,5 +1,5 @@
 import os
-DEBUG=False
+DEBUG=True
 SECRET_KEY='111'  # this is used for flash messages
 PORT=5000
 class Config:
