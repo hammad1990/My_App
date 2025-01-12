@@ -127,6 +127,8 @@ def find_code_func():
         df1.to_excel(Config.Downloaded_excel+"search.xlsx") 
 
         return send_file(Config.Downloaded_excel+"search.xlsx",as_attachment=True)
+        # return send_file(df1.to_excel(Config.Downloaded_excel+"search.xlsx"),as_attachment=True)
+        # return render_template("find_code.html",username=username)
         
        
         
