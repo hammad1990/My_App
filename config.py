@@ -13,7 +13,7 @@ class Config:
     # DATABASE_PARAMETER='Driver={ODBC Driver 17 for SQL Server};Server=DESKTOP-SR0QC2P\SQLEXPRESS;Database=usersDB;Trusted_Connection=yes;use_unicode=True;charset="utf8"'
     
     #PETRA DATA BASE:
-    DATABASE_PARAMETER='Driver={ODBC Driver 17 for SQL Server};Server=PEEDM-HAMAD;Database=usersDB;Trusted_Connection=yes;use_unicode=True;charset="utf8"'
+    DATABASE_PARAMETER='Driver={ODBC Driver 17 for SQL Server};Server=PEPUM-HAMAD;Database=usersDB;Trusted_Connection=yes;use_unicode=True;charset="utf8"'
 
     #GOOGLE CHROME PATH IN my laptop(open_soo.py):
     # chrome_path="C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
