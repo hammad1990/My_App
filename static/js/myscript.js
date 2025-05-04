@@ -979,6 +979,13 @@ $(add_emails_btn).click(function(e){ //on add input button click
     });
   //////////////////////////////////
 
+
+  // ###################### GetItemData ##########
+function show_Value(){
+  console.log("fddf")
+  document.getElementById("find_code_table").style.display='inline';
+ 
+}
  
   
 

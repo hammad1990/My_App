@@ -51,7 +51,10 @@ class PDF(FPDF):
     self.set_y(-8)
     self.set_font('Arial', 'I', 10)
     self.cell(0,10,f'Page{self.page_no()}/{{nb}}',align="C")
-
+    self.set_font('Arial', 'I', 6)
+    self.set_text_color(192,192,192)
+    self.set_x(0)
+    self.cell(0,10,'Developed By:M.Hammad',align="L")
 
 
 

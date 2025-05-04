@@ -894,3 +894,37 @@ hr.dashed {
   background-color: red;
 
 }
+
+/* GetItemDat.html ********************/
+#Supplier_Name{
+  margin-left: 492px;
+  margin-top: 20px;
+  display: inline;
+  width: 230px;
+  /* background-color: red; */
+}
+#GetData_btn{
+  margin-left: 40%;
+  margin-top: 50px;
+  border-radius: 100px;
+  display:block;
+  width: 150px;
+
+}
+#Description{
+  width: 300px;
+}
+#label_total_value{
+  color: aliceblue;
+  margin-left: 40%;
+}
+#output_result{
+  color: aliceblue;
+  margin-left: 40%;
+}
+
+.error_message_GetItem{
+  position: absolute;
+  left: 700px;
+  font-size: 30px;
+}
