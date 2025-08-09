@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block body  %}
+
+    <div style="position:fixed; left:1750px; top:28px;margin-top:18px"><h5 style="color: red;">welcome {{username}}</h5></div>
+    <div class="row" >
+        <div class="col-lg-12  col-xs-12 ">
+            
+            <h1 class="text" style="margin-top: 50px; margin-left: 290px;">Get Data for Policy</h1>
+            <p class="text3" style="margin-top: 50px; margin-left: 520px;">Shows all orders summary for mulitple suppliers with specific key words</p>
+            <form  action="/Getdataforpolicy" method="POST"  id="Getdataforpolicy_form" enctype="multipart/form-data"  >  <!--post means to post to server-->
+                <div class="row" >
+                    <div class="col-lg-12  col-xs-12 ">
+                        <div class="Get_Item_Data"> 
+                            <input type="text"   id="Suppliers_names"  name="Suppliers_names" placeholder="ABB,DANFOS,DELTA,..etc"  required autofocus value="{{Suppliers_names}}"> 
+                            <input type="text"   id="keywords"  name="keywords" placeholder="ACH580,VLT,FREQ"  required autofocus value="{{keywords}}"> 
+                            <input type="text"   id="From_Date1"  name="From_Date1" placeholder="From_Date YYYY-MM-DD"  required autofocus value="{{From_Date1}}">  
+                            <input type="text"   id="To_Date1"  name="To_Date1" placeholder="To_Date YYYY-MM-DD"  required autofocus value="{{To_Date1}}">   
+                        </div>
+                        <div class="new-btnf" >
+                            <button type="submit"  id="GetData_btn1" name="GetData_button1" onclick="show_Value()"><i class="fa-regular fa-square-plus"></i>Get Data</button>
+
+                            <br>
+
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-8 col-sm-8 table--t" >
+                            <table  id="policy_table" class="table" >
+                                <thead > 
+                                    <tr>
+                                        <th colspan="1" id="PLOC1"><input type="text" placeholder="PO" class="search-input"></th>
+                                        <th colspan="1"id="PLOC2"><input type="text" placeholder="SUPPLIER" class="search-input"></th>
+                                        <th colspan="1"id="PLOC3"><input type="text" placeholder="STATUS" class="search-input"></th>
+                                        <th colspan="1"id="PLOC4"><input type="text" placeholder="PO DATE" class="search-input"></th>
+                                        <th colspan="1"id="PLOC5"><input type="text" placeholder="VALUE" class="search-input"></th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for row in  output_result%}
+                                    <tr>
+                                       
+                                        <td>
+                                            {{row[0]}}
+                                        </td>
+                                        <td>
+                                            {{row[3]}}
+                                        </td>
+                                        <td>
+                                            {{row[4]}}
+                                        </td>
+                                        <td>
+                                            {{row[5]}}
+                                        </td>
+                                        <td>
+                                            {{row[6]}}
+                                        </td>
+                                        
+                                        
+                                    </tr>
+                                    {% endfor %}  
+                                </tbody>
+                            </table>
+                </div>
+                
+            </form>
+        </div>
+    </div> 
+
+{% endblock %} 

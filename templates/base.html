@@ -42,12 +42,12 @@
                     <li class="nav-item "><i class="fa-solid fa-house-user nav-link"></i><a class="navbar-brand"
                             href="home">Home</a></li>
                     {% if session["id"] == 2013 %} <!-- this is for admin -->
-                        <li class="nav-item"><i class="fa-solid fa-hand-point-up nav-link "></i><a class="navbar-brand"
-                                href="sequence1">Sequence of operation </a></li>
+                        <li class="nav-item" ><i class="fa-solid fa-hand-point-up nav-link "></i><a class="navbar-brand"
+                                href="sequence1" >Sequence of operation </a></li>
                         <li class="nav-item"><i class="fa-brands fa-free-code-camp nav-link"></i><a class="navbar-brand"
                                 href="heater">Heater Calculation</a></li>
-                        <li class="nav-item"><i class="fa-solid fa-list nav-link"></i><a class="navbar-brand"
-                                href="pointlist2">USA pointslist2</a></li>
+                        <!-- <li class="nav-item"><i class="fa-solid fa-list nav-link"></i><a class="navbar-brand"
+                                href="pointlist2">USA pointslist2</a></li> -->
                         <li class="nav-item"><i class="fa-solid fa-file-circle-plus nav-link"></i><a class="navbar-brand"
                                 href="components">Components</a></li>
                         <li class="nav-item"><i class="fa-solid fa-file-circle-plus nav-link"></i><a class="navbar-brand"
@@ -56,13 +56,14 @@
                                 href="find_code">Find code</a></li>
                         <li class="nav-item"><i class="bi bi-search nav-link"></i><a class="navbar-brand"
                                         href="add_supplier">Add/Delete supplier</a></li>
-
                         <li class="nav-item"><i class="bi bi-search nav-link"></i><a class="navbar-brand"
                                         href="GetItemData">Get Item Data</a></li>
+                        <li class="nav-item"><i class="bi bi-search nav-link"></i><a class="navbar-brand"
+                                        href="Getdataforpolicy">Get data for policy</a></li>
 
 
                     <!-- <li class="nav-item"><i class="bi bi-search nav-link"></i><a class="navbar-brand" href="test1">test1</a></li> -->
-                    {% elif session["id"] == 2014 %}
+                    {% elif session["id"] == 2014 %}<!-- this is for ghaleb -->
                         <li class="nav-item"><i class="fa-solid fa-hand-point-up nav-link "></i><a class="navbar-brand"
                                 href="sequence1">Sequence of operation </a></li>
                         <li class="nav-item"><i class="fa-brands fa-free-code-camp nav-link"></i><a class="navbar-brand"

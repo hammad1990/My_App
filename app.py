@@ -27,6 +27,7 @@ app.register_blueprint(RFQ)
 app.register_blueprint(find_code)
 app.register_blueprint(add_supplier)
 app.register_blueprint(GetItemData)
+app.register_blueprint(Getdataforpolicy)
 # app.register_blueprint(test1)
 
 

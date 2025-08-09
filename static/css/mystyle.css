@@ -60,10 +60,10 @@ p{
   
 }
 .text3{
-  
+  color: yellowgreen;
   margin-left: 50px;
   font-weight: 20;
-  font-size: 10px;
+  font-size: 30px;
   padding-left: 20px;
   
 }
@@ -927,4 +927,49 @@ hr.dashed {
   position: absolute;
   left: 700px;
   font-size: 30px;
+}
+
+
+/* Getdataforpolicy.html ********************/
+#Suppliers_names{
+  margin-left: 492px;
+  margin-top: 20px;
+  display: inline;
+  width: 230px;
+  /* background-color: red; */
+}
+#GetData_btn1{
+  margin-left: 40%;
+  margin-top: 50px;
+  border-radius: 100px;
+  display:block;
+  width: 150px;
+
+}
+#keywords{
+  width: 300px;
+}
+
+#policy_table{
+  display: table;
+  margin-left: 280px;
+}
+
+.error_message_GetItem{
+  position: absolute;
+  left: 700px;
+  font-size: 30px;
+}
+#policy_table{
+   text-align: center;
+}
+#policy_table thead tr #PLOC1 #PLOC2 #PLOC3 #PLOC4 #PLOC5{
+  width: 5%;
+  border-width: 0.5px;
+  text-align: center;
+}
+#policy_table thead tr th input {
+  width: 100%;
+  font-size: 20px; 
+  text-align: center;
 }

@@ -7,12 +7,13 @@
         <div class="col-lg-12  col-xs-12 ">
             
             <h1 class="text" style="margin-top: 50px; margin-left: 290px;">Get Item Data</h1>
+            <p class="text3" style="margin-top: 50px; margin-left: 520px;">Shows total value purchased for specific item from specific supplier</p>
             <form  action="/GetItemData" method="POST"  id="GetItemData_form" enctype="multipart/form-data"  >  <!--post means to post to server-->
                 <div class="row" >
                     <div class="col-lg-12  col-xs-12 ">
                         <div class="Get_Item_Data"> 
                             <input type="text"   id="Supplier_Name"  name="Supplier_Name" placeholder="Supplier Name as in EPCIOR"  required autofocus value="{{Supplier_Name}}"> 
-                            <input type="text"   id="Description"  name="Description" placeholder="write here the Description as in Code"  required autofocus value="{{Description}}"> 
+                            <input type="text"   id="Description"  name="Description" placeholder=" Description same as in Code"  required autofocus value="{{Description}}"> 
                             <input type="text"   id="From_Date"  name="From_Date" placeholder="From_Date as 2024-01-01"  required autofocus value="{{From_Date}}">  
                             <input type="text"   id="To_Date"  name="To_Date" placeholder="To_Date as 2025-01-01"  required autofocus value="{{To_Date}}">   
                         </div>
